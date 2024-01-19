@@ -20,14 +20,14 @@ Welcome to the Brokerage web application! This platform provides a user-friendly
 
 To get started with the Brokerage web application, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/brokerage-app.git`
+1. Clone the repository: `git clone https://github.com/mikiyas-girma/Brokerage-system.git`
 
 ## Getting Started
 
 To get started with the Brokerage web application, follow these steps:
 
 1. Install XAMPP: Download and install XAMPP from the official website.
-2. Clone the repository: `git clone https://github.com/your-username/brokerage-app.git`
+2. Clone the repository: `git clone https://github.com/mikiyas-girma/Brokerage-system.git`
 3. Move the cloned repository to the `htdocs` folder in your XAMPP installation directory.
 4. Start the XAMPP server.
 5. Set up the database: Open phpMyAdmin and create a new database called "Brokerage" for the application.
