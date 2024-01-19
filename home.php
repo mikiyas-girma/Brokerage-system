@@ -1,3 +1,6 @@
+<?php // include("includes/db.php"); ?>
+<?php include "includes/home_header.php"; ?>
+
 <body>
     <div id="page-wrapper">
         <div class="row">
