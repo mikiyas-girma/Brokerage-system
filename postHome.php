@@ -1,6 +1,6 @@
 <?php include("includes/db.php"); ?>
-<?php include "includes/Lo_header.php"; ?>
-<?php include "includes/Lo_nav.php"; ?>
+<?php include "includes/post_header.php"; ?>
+<?php include "includes/post_nav.php"; ?>
 
 <section class="section">
     <div class="container">

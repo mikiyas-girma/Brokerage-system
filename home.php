@@ -1,6 +1,3 @@
-<?php include("includes/db.php"); ?>
-<?php include "includes/home_header.php"; ?>
-
 <body>
     <div id="page-wrapper">
         <div class="row">
@@ -35,7 +32,7 @@
 
                                     <div class="d-flex justify-content-center h-100">
                                         <div class="card">
-                                            <?php include "newRegistration.php" ?>
+                                            <?php include "registration.php" ?>
 
 
 
@@ -113,8 +110,8 @@
                                                     </form>
                                                     <div class="card-footer mt-1">
                                                         <div class="d-flex justify-content-center links">
-                                                             have an account?<a id="login-link"
-                                                                class="text-primary" href="">Login</a>
+                                                            have an account?<a id="login-link" class="text-primary"
+                                                                href="">Login</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -181,7 +178,8 @@
                         <div class="col-lg-3 col-md-6">
                             <div class="p-4 text-center hover-bg-white hover-shadow rounded mb-4 transation-3s">
                                 <i class="flaticon-diagram text-primary flat-medium" aria-hidden="true"></i>
-                                <h5 id="conditions" class="text-secondary hover-text-primary py-3 m-0"><a href="#">Terms and Conditions</a>
+                                <h5 id="conditions" class="text-secondary hover-text-primary py-3 m-0"><a href="#">Terms
+                                        and Conditions</a>
                                 </h5>
                                 <p>Using these software you can buys many property that have been posted such as
                                     home , car, shopping material,motorcycle,
