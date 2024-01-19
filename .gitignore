@@ -1,0 +1,43 @@
+# Ignore vendor directories
+/vendor/
+
+# Ignore build artifacts
+/build/
+/dist/
+
+# Ignore configuration files
+/config.php
+
+# Ignore log files
+/log/
+
+# Ignore session files
+/sessions/
+
+# Ignore temporary files
+/tmp/
+
+# Ignore IDE-specific files and directories
+.idea/
+.vscode/
+
+# Ignore composer.lock file
+composer.lock
+
+# Ignore environment-specific files
+.env
+
+# Ignore  files folders
+/gebeya/
+/photos/
+/fonts/
+/d/
+/images/
+/mainimages/
+/placeholder/
+
+# Ignore cache files
+/cache/
+
+# Ignore uploaded files
+/uploads/
