@@ -24,10 +24,11 @@
                             <div class="text-white">
                                 <h1 id="title" class="mb-1"><span class="text-primary">Brokerage</span><br>
                                     System</h1>
+                                <?php include "registration.php" ?>
                                 <div class="container">
                                     <div class="d-flex justify-content-center">
                                         <div class="card">
-                                            <?php include "registration.php" ?>
+                                            <?php // include "registration.php" ?>
 
                                             <div class="myforms" style="padding: 0;">
                                                 <!-- login form -->
@@ -55,7 +56,8 @@
                                                     <div class="card-footer mt-1">
                                                         <div class="d-flex justify-content-center links">
                                                             Don't have an account?<a id="signup-link"
-                                                                class="text-primary" href="">Sign Up</a>
+                                                                class="text-primary" href="">Sign
+                                                                Up</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -118,29 +120,26 @@
             <!-- Text Block One -->
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12">
-                        <h2 class="text-secondary double-down-line text-center mb-5">Brokerage System</h2>
+                    <div class="col-lg-12 mt-4">
+                        <h2 class="text-secondary double-down-line text-center">Brokerage System</h2>
                     </div>
                 </div>
                 <div class="text-box-one">
                     <!-- Content -->
                     <div class="row">
                         <div class="col-lg-4 col-md-6">
-                            <div class="p-4 text-center hover-bg-white hover-shadow rounded mb-4 transation-3s">
+                            <div class="p-4 text-center hover-bg-white rounded mb-4 transation-1s shadow">
                                 <i class="flaticon-rent text-primary flat-medium" aria-hidden="true"></i>
-                                <h5 class="text-secondary hover-text-primary py-3 m-0"><a href="#">Best for</a>
-                                </h5>
+                                <h5 class="text-primary hover-text-primary py-3 m-0"><a href="#">Best for</a></h5>
                                 <p>Multiple financial markets, empowering users to buy and sell stocks, bonds,
-                                    commodities, and more with ease and efficiency
-                                    such as Home, car, electronic device, lower and upper machine, and other shopping
-                                    materials, etc.
-                                </p>
+                                    commodities, and more with ease and efficiency such as Home, car, electronic device,
+                                    lower and upper machine, and other shopping materials, etc.</p>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6">
-                            <div class="p-4 text-center hover-bg-white hover-shadow rounded mb-4 transation-3s">
+                            <div class="p-4 text-center hover-bg-white hover-shadow rounded mb-4 transation-3s shadow">
                                 <i class="flaticon-for-rent text-primary flat-medium" aria-hidden="true"></i>
-                                <h5 class="text-secondary hover-text-primary py-3 m-0"><a href="#">Rental Service</a>
+                                <h5 class="text-primary hover-text-primary py-3 m-0"><a href="#">Rental Service</a>
                                 </h5>
                                 <p>The software offers a user-friendly platform that allows clients to browse and select
                                     from
@@ -150,9 +149,9 @@
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6">
-                            <div class="p-4 text-center hover-bg-white hover-shadow rounded mb-4 transation-3s">
+                            <div class="p-4 text-center hover-bg-white hover-shadow rounded mb-4 transation-3s shadow">
                                 <i class="flaticon-diagram text-primary flat-medium" aria-hidden="true"></i>
-                                <h5 id="conditions" class="text-secondary hover-text-primary py-3 m-0">
+                                <h5 id="conditions" class="text-primary hover-text-primary py-3 m-0">
                                     <a href="#">Terms
                                         and Conditions</a>
                                 </h5>

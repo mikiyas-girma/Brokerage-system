@@ -111,6 +111,8 @@
         var loginForm = document.getElementById("login-form");
         var registerForm = document.getElementById("register-form");
         var title = document.getElementById("title");
+        var myalert = document.getElementById("myalert");
+
 
 
 
@@ -149,7 +151,14 @@
             }
         });
 
+        // show an myalert only for three seconds
+        setTimeout(function () {
+            myalert.style.display = "none";
+        }, 3000);
+
     });
+
+
 </script>
 
 </body>
