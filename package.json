@@ -1,0 +1,17 @@
+{
+  "name": "brokerage",
+  "version": "1.0.0",
+  "description": "Welcome to the Brokerage web application! This platform provides a user-friendly interface for clients to browse and select from a wide range of properties.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "tailwindcss -i src/styles.css -o dist/css/styles.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "postcss": "^8.4.33",
+    "tailwindcss": "^3.4.1"
+  }
+}
