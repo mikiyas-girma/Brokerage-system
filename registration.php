@@ -1,7 +1,6 @@
 <?php include "includes/db.php"; ?>
 <?php include "admin/functions.php"; ?>
 
-<!-- <body> -->
 <?php
 
 if (isset($_POST['submit'])) {

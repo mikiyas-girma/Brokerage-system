@@ -3,44 +3,33 @@
 
 <body>
     <div id="page-wrapper">
-        <div class="row">
+        <div class="row m-6">
             <!-- Header start -->
             <header id="header" class="transparent-header-modern fixed-header-bg-white w-100">
                 <div class="top-header bg-secondary">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-8">
-                                <!-- <ul class="top-contact list-text-white  d-table">
-<li><a href="#"><i class="fas fa-phone-alt text-primary mr-1"></i>(012) 345 678 102</a></li>
-<li><a href="#"><i class="fas fa-envelope text-primary mr-1"></i>brokerage@example.com</a></li>
-</ul> -->
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- logo part if available -->
             </header>
-            <!-- Header end -->
-            <!-- Banner Start -->
-            <div class="overlay-black w-100 slider-banner1 position-relative"
-                style="background-image: url('images/banner/04.jpg'); background-size: cover; background-position: center center; background-repeat: no-repeat;">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-center">
+            <div class="hero overlay-black slider-banner1 position-relative">
+
+                <div class="container ">
+                    <div class="row align-items-center">
                         <div class="col-lg-12">
                             <div class="text-white">
                                 <h1 id="title" class="mb-1"><span class="text-primary">Brokerage</span><br>
                                     System</h1>
                                 <div class="container">
-
-
                                     <div class="d-flex justify-content-center">
                                         <div class="card">
                                             <?php include "registration.php" ?>
 
-
-
-                                            <div class="card-body "
-                                                style="padding: 0; position: relative; bottom: 50px;">
+                                            <div class="myforms" style="padding: 0;">
                                                 <!-- login form -->
                                                 <div id="login-form">
                                                     <div class="card-header">
@@ -72,7 +61,7 @@
                                                 </div>
 
                                                 <!-- registration form -->
-                                                <div id="register-form" style="display: none;">
+                                                <div class="m-4" id="register-form" style="display: none;">
                                                     <h1>Register</h1>
                                                     <form role="form" action="home.php" method="post" id="signup-form"
                                                         autocomplete="off">
@@ -108,21 +97,15 @@
                                                         </div>
                                                         <div class="form-group">
                                                             <input type="submit" name="submit" id="btn-register"
-                                                                class="btn float-right login_btn" value="Register">
+                                                                class="btn float-right login_btn m-4" value="Register">
                                                         </div>
                                                     </form>
-                                                    <div class="card-footer mt-1">
-                                                        <div class="d-flex justify-content-center links">
-                                                            have an account?<a id="login-link" class="text-primary"
-                                                                href="">Login</a>
-                                                        </div>
+                                                    <div class="d-flex justify-content-center links">
+                                                        Already have an account?<a id="login-link" class="text-primary"
+                                                            href="">Login</a>
                                                     </div>
                                                 </div>
                                             </div>
-
-
-
-
                                         </div>
                                     </div>
                                 </div>
@@ -131,10 +114,8 @@
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Text Block One -->
-        <div class="full-row bg-gray">
+            <!-- Text Block One -->
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -151,8 +132,8 @@
                                 </h5>
                                 <p>Multiple financial markets, empowering users to buy and sell stocks, bonds,
                                     commodities, and more with ease and efficiency
-                                    such as Home, car,electronic deviece, lower and upper machine and other shoping
-                                    material e.t.c
+                                    such as Home, car, electronic device, lower and upper machine, and other shopping
+                                    materials, etc.
                                 </p>
                             </div>
                         </div>
@@ -163,25 +144,26 @@
                                 </h5>
                                 <p>The software offers a user-friendly platform that allows clients to browse and select
                                     from
-                                    renting different property suc as home , car,house building materials, motorcycle,
-                                    any other upper and lower machines and e.t.c.</p>
+                                    renting different properties such as home, car, house building materials,
+                                    motorcycle,
+                                    and other upper and lower machines, etc.</p>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6">
                             <div class="p-4 text-center hover-bg-white hover-shadow rounded mb-4 transation-3s">
                                 <i class="flaticon-diagram text-primary flat-medium" aria-hidden="true"></i>
-                                <h5 id="conditions" class="text-secondary hover-text-primary py-3 m-0"><a href="#">Terms
+                                <h5 id="conditions" class="text-secondary hover-text-primary py-3 m-0">
+                                    <a href="#">Terms
                                         and Conditions</a>
                                 </h5>
-                                <p>Using these software you can buys many property that have been posted such as
-                                    home , car, shopping material,motorcycle,
-                                    different machines, office mateial and e.t.c
+                                <p>Using this software, you can buy many properties that have been posted, such as
+                                    home, car, shopping materials, motorcycle,
+                                    different machines, office materials, etc.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <?php include "includes/home_footer.php"; ?>
+            <?php include "includes/home_footer.php"; ?>
