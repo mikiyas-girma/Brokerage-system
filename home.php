@@ -33,7 +33,7 @@
                                 <div class="container">
 
 
-                                    <div class="d-flex justify-content-center h-100">
+                                    <div class="d-flex justify-content-center">
                                         <div class="card">
                                             <?php include "registration.php" ?>
 
@@ -144,7 +144,7 @@
                 <div class="text-box-one">
                     <!-- Content -->
                     <div class="row">
-                        <div class="col-lg-3 col-md-6">
+                        <div class="col-lg-4 col-md-6">
                             <div class="p-4 text-center hover-bg-white hover-shadow rounded mb-4 transation-3s">
                                 <i class="flaticon-rent text-primary flat-medium" aria-hidden="true"></i>
                                 <h5 class="text-secondary hover-text-primary py-3 m-0"><a href="#">Best for</a>
@@ -156,7 +156,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6">
+                        <div class="col-lg-4 col-md-6">
                             <div class="p-4 text-center hover-bg-white hover-shadow rounded mb-4 transation-3s">
                                 <i class="flaticon-for-rent text-primary flat-medium" aria-hidden="true"></i>
                                 <h5 class="text-secondary hover-text-primary py-3 m-0"><a href="#">Rental Service</a>
@@ -167,18 +167,7 @@
                                     any other upper and lower machines and e.t.c.</p>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6">
-                            <!-- <div class="p-4 text-center hover-bg-white hover-shadow rounded mb-4 transation-3s">
-                                <i class="flaticon-list text-primary flat-medium" aria-hidden="true"></i>
-                                <h5 class="text-secondary hover-text-primary py-3 m-0"><a href="#">Property Listing</a>
-                                </h5>
-                                <p>Listing property that you wanted to selling or renting to other people.
-                                    these renting or selling property include home , car, shopping material,motorcycle,
-                                    different machines, office mateial and e.t.c
-                                </p>
-                            </div> -->
-                        </div>
-                        <div class="col-lg-3 col-md-6">
+                        <div class="col-lg-4 col-md-6">
                             <div class="p-4 text-center hover-bg-white hover-shadow rounded mb-4 transation-3s">
                                 <i class="flaticon-diagram text-primary flat-medium" aria-hidden="true"></i>
                                 <h5 id="conditions" class="text-secondary hover-text-primary py-3 m-0"><a href="#">Terms
