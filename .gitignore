@@ -5,7 +5,11 @@
 /build/
 /dist/
 
-# Ignore configuration files
+# ignore node_modules
+/node_modules/
+
+# Ignore configuration files and package lock files
+/.env
 /config.php
 
 # Ignore log files
