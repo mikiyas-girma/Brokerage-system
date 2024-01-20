@@ -42,16 +42,3 @@ We welcome contributions from the community! If you'd like to contribute to the 
 
 This project is licensed under the [MIT License](LICENSE).
 
-## Contributing
-
-We welcome contributions from the community! If you'd like to contribute to the Brokerage web application, please follow these guidelines:
-
-1. Fork the repository
-2. Create a new branch: `git checkout -b feature/your-feature-name`
-3. Make your changes and commit them: `git commit -m 'Add your feature'`
-4. Push to the branch: `git push origin feature/your-feature-name`
-5. Submit a pull request
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
