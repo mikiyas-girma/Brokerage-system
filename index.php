@@ -47,13 +47,14 @@
                            </a> ,<a href="#!" class="ml-1"></a>
                         </li>
                      </ul>
-                     <!-- <p><?php echo $post_content; ?></p> -->
-                     <!-- <a href="" class="btn btn-outline-primary">Continue Reading</a> -->
-                  </div>
-                  <div class=" col-11 col-md-10 col-lg-12" id="imgcont">
                      <p>
                         <?php echo $post_content; ?>
+                        <a href="postHome.php?p_id=<?php echo $post_id ?>&p_user=<?php echo $post_user ?>" class="bold">
+                           See More</a>
                      </p>
+
+                  </div>
+                  <div class=" col-11 col-md-10 col-lg-12" id="imgcont">
                      <div class="post-slider">
 
                         <?php
