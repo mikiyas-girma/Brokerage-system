@@ -124,6 +124,14 @@ body {
   justify-content: center;
 }
 
+#imgcont {
+  width: fit-content;
+  /* make italic */
+  color: red;
+  font-style: italic;
+  font-size: large;
+}
+
 img {
   vertical-align: middle;
   border: 0;

@@ -30,7 +30,7 @@
                <article class="row mb-5 ">
 
                   <div class="col-12 mx-auto">
-                     <h3><a class="post-title " href="post-elements.html">
+                     <h3><a class="post-title " href="">
                            <?php echo $post_title; ?>
                         </a></h3>
                      <ul class="list-inline post-meta mb-4">
@@ -48,9 +48,9 @@
                         </li>
                      </ul>
                      <!-- <p><?php echo $post_content; ?></p> -->
-                     <!-- <a href="post-elements.html" class="btn btn-outline-primary">Continue Reading</a> -->
+                     <!-- <a href="" class="btn btn-outline-primary">Continue Reading</a> -->
                   </div>
-                  <div class="col-11 col-md-10 col-lg-12">
+                  <div class=" col-11 col-md-10 col-lg-12" id="imgcont">
                      <p>
                         <?php echo $post_content; ?>
                      </p>
@@ -109,13 +109,13 @@
             <!-- tags -->
             <div class="widget">
 
-               <h5 class="widget-title"><span>Tags</span></h5>
+               <!-- <h5 class="widget-title"><span>Tags</span></h5>
                <ul class="list-inline widget-list-inline">
-                  <li class="list-inline-item"><a href="#!">Home</a></li>
+                  <li class="list-inline-item"><a href="">Homes</a></li>
                   <li class="list-inline-item"><a href="#!">Electronics</a></li>
                   <li class="list-inline-item"><a href="#!">Vehicles</a></li>
                   <li class="list-inline-item"><a href="#!">Dresses</a></li>
-               </ul>
+               </ul> -->
             </div>
             <!-- latest post -->
             <div class="widget">
@@ -126,7 +126,7 @@
 
 
                <?php
-               $query = "SELECT * FROM properties order by post_id asc ";
+               $query = "SELECT * FROM properties order by post_id desc ";
                $result = mysqli_query($connection, $query);
 
                while ($row = mysqli_fetch_array($result)) {
@@ -158,14 +158,16 @@
                            // Assuming the images are stored in the "../images/" directory
                            $imagePath = "images/" . $firstPhoto;
 
-                           echo "<img loading='lazy' src='$imagePath'  class='mr-3' alt='post-thumb'>";
+                           echo "<img loading='lazy' src='$imagePath'  class='mr-3' alt=''>";
                         }
 
                         ?>
 
                         <div class="media-body">
                            <h5 class="h6 mb-0"><a href="">
-                                 <?php echo $post_tags; ?>
+                                 <a href='postHome.php?p_id=<?php echo $post_id ?>&p_user=<?php echo $post_user ?>'>
+                                    <?php echo $post_title ?>
+                                 </a>
                               </a></h5>
 
                         </div>
@@ -180,7 +182,7 @@
    </div>
 </section>
 
-<footer class="section-sm pb-0  border-default">
+<footer class=" section-sm pb-0 border-default">
    <div class="container">
    </div>
    <div class="scroll-top ">
