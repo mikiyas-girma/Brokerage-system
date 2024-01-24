@@ -32,6 +32,13 @@
                                             <?php // include "registration.php" ?>
 
                                             <div class="myforms" style="padding: 0;">
+                                                <!-- get errmsg from url and display it -->
+                                                <?php
+                                                if (isset($_GET['errmsg'])) {
+                                                    $errmsg = $_GET['errmsg'];
+                                                    echo "<h5 id='myalert' class='text-center text-danger'>$errmsg</h5>";
+                                                }
+                                                ?>
                                                 <!-- login form -->
                                                 <div id="login-form">
                                                     <div class="card-header">
