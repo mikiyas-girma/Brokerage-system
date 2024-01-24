@@ -142,10 +142,8 @@
                                 <h5 class="text-primary hover-text-primary py-3 m-0"><a href="#">Rental Service</a>
                                 </h5>
                                 <p>The software offers a user-friendly platform that allows clients to browse and select
-                                    from
-                                    renting different properties such as home, car, house building materials,
-                                    motorcycle,
-                                    and other upper and lower machines, etc.</p>
+                                    from renting different properties such as home, car, house building materials,
+                                    motorcycle, and other upper and lower machines, etc.</p>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6">
