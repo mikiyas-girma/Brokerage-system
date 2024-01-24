@@ -39,21 +39,26 @@
                                                         <div class="d-flex justify-content-end ">
                                                         </div>
                                                     </div>
-                                                    <form action="includes/login.php" method="post">
+                                                    <form action="includes/login.php" method="post"
+                                                        onsubmit="return validateForm()">
                                                         <div class="input-group form-group">
                                                             <div class="input-group-prepend"></div>
-                                                            <input type="text" name="username" class="form-control"
-                                                                placeholder="Username">
+                                                            <input id="name" type="text" name="username"
+                                                                class="form-control" placeholder="Username">
+                                                            <div class="invalid-feedback">
+                                                                enter your username
+                                                            </div>
                                                         </div>
                                                         <div class="input-group form-group">
-                                                            <input type="password" name="password" class="form-control"
-                                                                placeholder="Password">
+                                                            <input id="zip" type="password" name="password"
+                                                                class="form-control" placeholder="Password">
                                                         </div>
-                                                        <div class="form-group">
+                                                        <div id="submit" class="form-group">
                                                             <input type="submit" name="login" value="Login"
                                                                 class="btn float login_btn">
                                                         </div>
                                                     </form>
+
                                                     <div class="card-footer mt-1">
                                                         <div class="d-flex justify-content-center links">
                                                             Don't have an account?<a id="signup-link"
