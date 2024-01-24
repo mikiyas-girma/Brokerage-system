@@ -35,7 +35,7 @@
                         </a></h3>
                      <ul class="list-inline post-meta mb-4">
                         <li class="list-inline-item"><i class="ti-user mr-2"></i>
-                           <a href="author.html">
+                           <a href="">
                               <?php echo $post_user; ?>
                            </a>
                         </li>
