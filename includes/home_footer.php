@@ -10,11 +10,6 @@
                             <div class="row">
                                 <div class="col-md-4 col-lg-4">
                                     <div class="footer-widget footer-nav mb-4">
-                                        <!-- <h4 class="widget-title text-white double-down-line-left position-relative">Team of</h4>
-                                                <ul class="hover-text-primary">
-                                                    <li class="col-lg-3"><a href="" class="text-white">Contact</a></li>
-                                                    <li class="col-lg-3"><a href="" class="text-white">Contact</a></li>  <li class="col-lg-6"><a href="" class="text-white">Contact</a></li>  <li class="col-lg-6"><a href="" class="text-white">Contact</a></li>  <li class="col-lg-6"><a href="" class="text-white">Contact</a></li>
-                                                </ul> -->
                                     </div>
                                 </div>
                                 <div class="col-md-4 col-lg-4">
@@ -22,7 +17,7 @@
                                         <h4 class="widget-title text-white double-down-line-left position-relative">
                                             Quick Links</h4>
                                         <ul class="hover-text-primary">
-                                            <li><a href="index.php" class="text-white">View Property</a></li>
+                                            <li><a href="home.php" class="text-white">View Property</a></li>
                                             <li><a href="home.php" class="text-white">Post your property</a></li>
                                             <li><a href="#conditions" class="text-white">Terms and Condition</a></li>
 

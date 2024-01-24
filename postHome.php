@@ -34,7 +34,7 @@
                         <article class="row mb-5 ">
 
                             <div class="col-12 mx-auto">
-                                <h3><a class="post-title " href="post-elements.html">
+                                <h3><a class="post-title " href="">
                                         <?php echo $post_title; ?>
                                     </a></h3>
                                 <ul class="list-inline post-meta mb-4">
@@ -52,7 +52,7 @@
                                     </li>
                                 </ul>
                                 <!-- <p><?php echo $post_content; ?></p> -->
-                                <!-- <a href="post-elements.html" class="btn btn-outline-primary">Continue Reading</a> -->
+                                <!-- <a href="" class="btn btn-outline-primary">Continue Reading</a> -->
                             </div>
                             <div class="col-11 col-md-10 col-lg-12">
                                 <p>

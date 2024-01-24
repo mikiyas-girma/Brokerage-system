@@ -153,10 +153,10 @@
                                     <a href="#">Terms
                                         and Conditions</a>
                                 </h5>
-                                <p>Using this software, you can buy many properties that have been posted, such as
-                                    home, car, shopping materials, motorcycle,
-                                    different machines, office materials, etc.
-                                </p>
+                                <p>By accessing and using this software, you acknowledge and agree to the terms and
+                                    conditions outlined below. These terms and conditions govern your use of the
+                                    platform and establish the rights and obligations between you and the brokerage
+                                    system. Please review these terms and conditions carefully before proceeding.</p>
                             </div>
                         </div>
                     </div>
