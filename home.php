@@ -24,6 +24,7 @@
                             <div class="text-white">
                                 <h1 id="title" class="mb-1"><span class="text-primary">Brokerage</span><br>
                                     System</h1>
+                                <!-- the logic inside php file -->
                                 <?php include "registration.php" ?>
                                 <div class="container">
                                     <div class="d-flex justify-content-center">
