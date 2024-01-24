@@ -8,6 +8,9 @@ function validateName() {
     if (!re.test(name.value)) {
         // console.log("Name field is empty")
         name.classList.add('is-invalid');
+        setTimeout(() => {
+            name.classList.remove('is-invalid');
+        }, 2000); // Remove 'is-invalid' class after 3 seconds
     } else {
         name.classList.remove('is-invalid');
     }
@@ -19,6 +22,9 @@ function validatePassword() {
     if (password.value === "") {
         // console.log("Password field is empty", password.value)
         password.classList.add('is-invalid');
+        setTimeout(() => {
+            password.classList.remove('is-invalid');
+        }, 2000); // Remove 'is-invalid' class after 3 seconds
     } else {
         console.log(password.value.trim())
         password.classList.remove('is-invalid');
