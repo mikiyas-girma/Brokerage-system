@@ -50,8 +50,11 @@
                                                             </div>
                                                         </div>
                                                         <div class="input-group form-group">
-                                                            <input id="zip" type="password" name="password"
+                                                            <input id="password" type="password" name="password"
                                                                 class="form-control" placeholder="Password">
+                                                            <div class="invalid-feedback">
+                                                                enter your password
+                                                            </div>
                                                         </div>
                                                         <div id="submit" class="form-group">
                                                             <input type="submit" name="login" value="Login"

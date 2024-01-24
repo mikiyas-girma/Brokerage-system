@@ -1,64 +1,41 @@
 // event listeners for blur
 document.getElementById('name').addEventListener('blur', validateName);
-document.getElementById('zip').addEventListener('blur', validateZip);
-document.getElementById('email').addEventListener('blur', validateEmail);
-document.getElementById('phone').addEventListener('blur', validatephone);
-
-// event listener for form submission
-document.getElementById('submit').addEventListener('click', function (event) {
-    const invalidInputs = document.querySelectorAll('.is-invalid');
-    if (invalidInputs.length > 0) {
-        event.preventDefault(); // prevent form submission
-        // You can also display an error message to the user
-    }
-});
+document.getElementById('password').addEventListener('blur', validatePassword);
 
 function validateName() {
     const name = document.getElementById('name');
     const re = /^[a-zA-Z]{2,10}$/;
     if (!re.test(name.value)) {
+        // console.log("Name field is empty")
         name.classList.add('is-invalid');
     } else {
         name.classList.remove('is-invalid');
     }
 }
 
-function validateZip() {
-    const zip = document.getElementById('zip');
-    const re = /^[0-9]{5}(-[0-9]{4})?$/;
-    if (!re.test(zip.value)) {
-        zip.classList.add('is-invalid');
+function validatePassword() {
+    const password = document.getElementById('password');
+    const re = /^[a-zA-Z]{2,10}$/;
+    if (password.value === "") {
+        // console.log("Password field is empty", password.value)
+        password.classList.add('is-invalid');
     } else {
-        zip.classList.remove('is-invalid');
+        console.log(password.value.trim())
+        password.classList.remove('is-invalid');
     }
 }
-
-function validateEmail() {
-    const email = document.getElementById('email');
-    const re = /^[A-Za-z]([A-Za-z0-9_\-\.]+)@([A-Za-z0-9_\-\.]+)\.([A-Za-z]{2,5})$/;
-    if (!re.test(email.value)) {
-        email.classList.add('is-invalid');
-    } else {
-        email.classList.remove('is-invalid');
-    }
-}
-
-function validatephone() {
-    const phone = document.getElementById('phone');
-    const re = /^\+(\d{1,3})[ ]?(\d{9,10})$/;
-    if (!re.test(phone.value)) {
-        phone.classList.add('is-invalid');
-    } else {
-        phone.classList.remove('is-invalid');
-    }
-}
-
 
 function validateForm() {
     var username = document.getElementById("name").value;
-    var password = document.getElementById("zip").value;
+    var password = document.getElementById("password").value;
 
     if (username.trim() === "" || password.trim() === "") {
+        // console.log("Username or password field is empty")
+        return false; // Prevent form submission
+    }
+    if (password.trim() === "") {
+        // Password field is empty
+        console.log("Password field is empty")
         return false; // Prevent form submission
     }
 }
