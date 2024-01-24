@@ -1,18 +1,18 @@
 // event listeners for blur
-document.getElementById('name').addEventListener('blur', validateName);
+document.getElementById('username').addEventListener('blur', validateUserName);
 document.getElementById('password').addEventListener('blur', validatePassword);
 
-function validateName() {
-    const name = document.getElementById('name');
+function validateUserName() {
+    const username = document.getElementById('username');
     const re = /^[a-zA-Z]{2,10}$/;
-    if (!re.test(name.value)) {
+    if (!re.test(username.value)) {
         // console.log("Name field is empty")
-        name.classList.add('is-invalid');
+        username.classList.add('is-invalid');
         setTimeout(() => {
-            name.classList.remove('is-invalid');
+            username.classList.remove('is-invalid');
         }, 2000); // Remove 'is-invalid' class after 3 seconds
     } else {
-        name.classList.remove('is-invalid');
+        username.classList.remove('is-invalid');
     }
 }
 
@@ -32,16 +32,28 @@ function validatePassword() {
 }
 
 function validateForm() {
-    var username = document.getElementById("name").value;
-    var password = document.getElementById("password").value;
+    var username = document.getElementById("username");
+    var password = document.getElementById("password");
 
-    if (username.trim() === "" || password.trim() === "") {
+    if (username.value.trim() === "" || password.value.trim() === "") {
         // console.log("Username or password field is empty")
+        if (username.value.trim() === "") {
+            username.classList.add('is-invalid');
+            setTimeout(() => {
+                username.classList.remove('is-invalid');
+            }, 2000);
+        }
+        if (password.value.trim() === "") {
+            password.classList.add('is-invalid');
+            setTimeout(() => {
+                password.classList.remove('is-invalid');
+            }, 2000);
+        }
         return false; // Prevent form submission
     }
-    if (password.trim() === "") {
+    if (password.value.trim() === "") {
         // Password field is empty
         console.log("Password field is empty")
-        return false; // Prevent form submission
+        // Add your code here to run when the password input was the reason for returning false
     }
 }

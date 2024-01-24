@@ -43,7 +43,7 @@
                                                         onsubmit="return validateForm()">
                                                         <div class="input-group form-group">
                                                             <div class="input-group-prepend"></div>
-                                                            <input id="name" type="text" name="username"
+                                                            <input id="username" type="text" name="username"
                                                                 class="form-control" placeholder="Username">
                                                             <div class="invalid-feedback">
                                                                 enter your username
