@@ -22,7 +22,7 @@
                         $post_user = $row['post_user'];
                         $post_date = $row['post_date'];
                         $post_image = $row['post_image'];
-                        $post_content = substr($row['post_content'], 0, 120);
+                        $post_content = $row['post_content'];
                         $post_tags = $row['post_tags'];
                         $post_comment_count = $row['post_comment_count'];
                         $post_status = $row['post_status'];

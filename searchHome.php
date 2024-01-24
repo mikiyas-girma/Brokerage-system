@@ -11,7 +11,7 @@
             if (isset($_POST['submit'])) {
                $search = $_POST['search'];
 
-               $query = "SELECT * FROM properties WHERE post_title  LIKE '%$search%' AND post_tags  LIKE '%$search%'";
+               $query = "SELECT * FROM properties WHERE post_title  LIKE '%$search%' AND post_tags  LIKE '%$search%' order by post_id desc";
                $result = mysqli_query($connection, $query);
 
                if (!$result) {
