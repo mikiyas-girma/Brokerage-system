@@ -82,11 +82,11 @@
                                                 <div class="m-4" id="register-form" style="display: none;">
                                                     <h1>Register</h1>
                                                     <form role="form" action="home.php" method="post" id="signup-form"
-                                                        autocomplete="off">
+                                                        onsubmit="return validateRegistrationForm()" autocomplete="off">
                                                         <div class="form-group">
                                                             <label for="firstName" class="sr-only">First Name:</label>
                                                             <input type="text" name="firstName" id="firstname"
-                                                                class="form-control" placeholder="First Name">
+                                                                class="form-control " placeholder="First Name">
                                                             <div class="invalid-feedback">
                                                                 enter your first name
                                                             </div>
