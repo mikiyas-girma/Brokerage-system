@@ -12,9 +12,15 @@
 
          <div class="collapse navbar-collapse text-center" id="navigation">
             <ul class="navbar-nav ml-auto">
-               <li class="nav-item dropdown">
+               <!-- <li class="nav-item dropdown">
                   <a class="nav-link" href="index.php">
                      homepage
+                  </a>
+               </li> -->
+               <!-- another list item that navigates to user_profile.php -->
+               <li class="nav-item dropdown">
+                  <a class="btn btn-primary" href="user/user_profile.php">
+                     <i class="ti-plus"></i>ADD POST
                   </a>
                </li>
 
@@ -24,9 +30,6 @@
                }
                ?>
 
-               <!-- <li class="nav-item">
-                  <a class="nav-link" href="about.html">About</a>
-               </li> -->
                <li class="nav-item">
                   <!-- <a class="nav-link" href="#">Contact</a> -->
                </li>

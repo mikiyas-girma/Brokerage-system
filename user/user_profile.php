@@ -40,7 +40,7 @@ if (isset($_SESSION['username'])) {
     <title>User profile</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="../css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="../css/custom/user_profile.css">
     <link href="../fonts/font-awesome/css/all.min.css" rel="stylesheet">
 
