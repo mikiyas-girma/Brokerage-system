@@ -46,6 +46,7 @@ function validateLastName() {
 function validateUserName() {
     const username = document.getElementById('username');
     const re = /^(([A-Za-z]{2,})+)([A-Za-z0-9]{2,5})$/;
+
     if (!re.test(username.value)) {
         username.classList.add('is-invalid');
         setTimeout(() => {
@@ -68,6 +69,7 @@ function validateUserName() {
 function validatePassword() {
     const password = document.getElementById('password');
     const pwRE = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{5,9}$/;
+
     if (!pwRE.test(password.value)) {
         password.classList.add('is-invalid');
         setTimeout(() => {
@@ -77,7 +79,7 @@ function validatePassword() {
         password.classList.remove('is-invalid');
     }
 
-    if (!re.test(passwordInput.value)) {
+    if (!pwRE.test(passwordInput.value)) {
         passwordInput.classList.add('is-invalid');
         setTimeout(() => {
             passwordInput.classList.remove('is-invalid');
