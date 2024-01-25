@@ -1,6 +1,13 @@
 // event listeners for blur
 document.getElementById('username').addEventListener('blur', validateUserName);
 document.getElementById('password').addEventListener('blur', validatePassword);
+document.getElementById('firstname').addEventListener('blur', validateFirstName);
+
+// event listeners on registration form
+const firstnameElement = document.getElementById('firstname');
+console.log('Element exists:');
+
+
 
 function validateUserName() {
     const username = document.getElementById('username');
@@ -41,19 +48,14 @@ function validateForm() {
             username.classList.add('is-invalid');
             setTimeout(() => {
                 username.classList.remove('is-invalid');
-            }, 2000);
+            }, 3000);
         }
         if (password.value.trim() === "") {
             password.classList.add('is-invalid');
             setTimeout(() => {
                 password.classList.remove('is-invalid');
-            }, 2000);
+            }, 3000);
         }
         return false; // Prevent form submission
-    }
-    if (password.value.trim() === "") {
-        // Password field is empty
-        console.log("Password field is empty")
-        // Add your code here to run when the password input was the reason for returning false
     }
 }

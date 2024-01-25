@@ -85,8 +85,11 @@
                                                         autocomplete="off">
                                                         <div class="form-group">
                                                             <label for="firstName" class="sr-only">First Name:</label>
-                                                            <input type="text" name="firstName" id="firstName"
+                                                            <input type="text" name="firstName" id="firstname"
                                                                 class="form-control" placeholder="First Name">
+                                                            <div class="invalid-feedback">
+                                                                enter your username
+                                                            </div>
                                                             <span id="firstNameError" class="error"></span>
                                                         </div>
                                                         <div class="form-group">
