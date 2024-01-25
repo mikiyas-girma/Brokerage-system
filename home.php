@@ -131,6 +131,7 @@
                                                         <div class="form-group">
                                                             <input type="submit" name="submit" id="btn-register"
                                                                 class="btn float-right login_btn m-4" value="Register">
+                                                            <!-- after registering reload the page without submitting the form again -->
 
                                                         </div>
                                                     </form>

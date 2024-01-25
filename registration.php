@@ -15,10 +15,7 @@ if (isset($_POST['submit'])) {
     } else {
         if (!empty($username) && !empty($email) && !empty($password)) {
 
-
             $password = password_hash($password, PASSWORD_BCRYPT, array('cost' => 12));
-
-
 
             $query = "INSERT INTO users (user_firstname, user_lastname, username, password, user_email, user_role) VALUES('$firstName', '$lastName','$username', '$password', '$email', 'Subscriber')";
             $user_registration_query = mysqli_query($connection, $query);
@@ -26,7 +23,7 @@ if (isset($_POST['submit'])) {
             if (!$user_registration_query) {
                 die("Query failed " . mysqli_error($connection));
             } else {
-                echo "<h5 id='myalert'  class='text-center text-success'>Your registration has been submitted</h5>";
+                echo "<h5 id='myalert'  class='text-center text-success'> registrated successfully </h5>";
             }
         } else {
             echo "<script>alert('Fields cannot be empty')</script>";
