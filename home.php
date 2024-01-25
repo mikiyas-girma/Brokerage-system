@@ -95,7 +95,7 @@
                                                             <input type="text" name="firstName" id="firstname"
                                                                 class="form-control " placeholder="First Name">
                                                             <div class="invalid-feedback">
-                                                                only letters allowed
+                                                                at least 2 letters & only letters allowed
                                                             </div>
                                                             <span id="firstNameError" class="error"></span>
                                                         </div>
@@ -104,7 +104,7 @@
                                                             <input type="text" name="lastName" id="lastname"
                                                                 class="form-control" placeholder="Last Name">
                                                             <div class="invalid-feedback">
-                                                                only letters allowed
+                                                                at least 2 letters & only letters allowed
                                                             </div>
                                                             <span id="lastNameError" class="error"></span>
                                                         </div>
