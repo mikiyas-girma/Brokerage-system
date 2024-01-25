@@ -1,3 +1,5 @@
+<?php // Add PHP opening tag here ?>
+
 <!-- navigation -->
 <header class="sticky-top bg-white border-bottom border-default">
    <div class="container">
@@ -42,11 +44,15 @@
             aria-expanded='false'><i class='fa fa-user'></i>";
                   echo $_SESSION['username'] .
                      " <b class='caret'></b></a>
-            <div class='dropdown-menu'>   
-              
-                  <a  class='dropdown-item' href='user/user_profile.php'><i class='fa fa-fw fa-user'></i> Profile</a>
+            <div class='dropdown-menu'>"; // Close PHP tag here
                
-               
+                  if ($_SESSION['user_role'] == 'Admin') {
+                     echo "<a class='dropdown-item' href='./admin/profile.php'><i class='fa fa-fw fa-user'></i> Profile</a>";
+                  } else {
+                     echo "<a class='dropdown-item' href='user/user_profile.php'><i class='fa fa-fw fa-user'></i> Profile</a>";
+                  }
+
+                  echo "
                <a class='dropdown-item' href='includes/logout.php'><i class='fa fa-fw fa-power-off'></i> Log Out</a>
                
             </div>
@@ -71,3 +77,4 @@
       </nav>
    </div>
 </header>
+<?php // Add PHP closing tag here ?>
