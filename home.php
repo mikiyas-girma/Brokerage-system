@@ -141,8 +141,8 @@
                                                         </div>
                                                     </form>
                                                     <div class="d-flex justify-content-center links">
-                                                        Already have an account?<a id="login-link" class="text-primary"
-                                                            href="">Login</a>
+                                                        <span>Already have an account?<a id="login-link"
+                                                                class="text-primary" href="">Login</a></span>
                                                     </div>
                                                 </div>
                                             </div>

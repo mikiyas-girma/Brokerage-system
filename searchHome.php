@@ -55,7 +55,17 @@
                               <li class="list-inline-item">Date :
                                  <?php echo $post_date; ?>
                               </li>
-                              <li class="list-inline-item">Categories : <a href="#!" class="ml-1">Photography </a>
+                              <li class="list-inline-item">Categories :
+                                 <?php
+                                 $categoryQuery = "SELECT * FROM properties";
+                                 $categoryResult = mysqli_query($connection, $categoryQuery);
+                                 if ($categoryResult) {
+                                    while ($categoryRow = mysqli_fetch_array($categoryResult)) {
+                                       $categoryName = $categoryRow['post_title'];
+                                       echo "<a href='#!' class='ml-1'>$categoryName</a>";
+                                    }
+                                 }
+                                 ?>
                               </li>
                               <li class="list-inline-item">Tags : <a href="#!" class="ml-1">
                                     <?php echo $post_tags; ?>
@@ -112,27 +122,23 @@
             <div class="widget">
                <h5 class="widget-title"><span>Categories</span></h5>
                <ul class="list-unstyled widget-list">
-                  <li><a href="#!" class="d-flex">Four seasone
-                        <small class="ml-auto">(1)</small></a>
-                  </li>
-                  <li><a href="#!" class="d-flex">Newyork city
-                        <small class="ml-auto">(2)</small></a>
-                  </li>
-                  <li><a href="#!" class="d-flex">Photobooth
-                        <small class="ml-auto">(1)</small></a>
-                  </li>
-                  <li><a href="#!" class="d-flex">Photography
-                        <small class="ml-auto">(2)</small></a>
-                  </li>
-                  <li><a href="#!" class="d-flex">Videography
-                        <small class="ml-auto">(1)</small></a>
-                  </li>
+                  <?php
+                  $categoryQuery = "SELECT * FROM properties";
+                  $categoryResult = mysqli_query($connection, $categoryQuery);
+                  if ($categoryResult) {
+                     while ($categoryRow = mysqli_fetch_array($categoryResult)) {
+                        $categoryName = $categoryRow['post_title'];
+                        $categoryCount = $categoryRow['post_id'];
+                        echo "<li><a href='#!' class='d-flex'>$categoryName<small class='ml-auto'>($categoryCount)</small></a></li>";
+                     }
+                  }
+                  ?>
                </ul>
             </div>
             <!-- tags -->
             <div class="widget">
                <h5 class="widget-title"><span>Tags</span></h5>
-               <ul class="list-inline widget-list-inline">
+               <!-- <ul class="list-inline widget-list-inline">
                   <li class="list-inline-item"><a href="#!">Booth</a>
                   </li>
                   <li class="list-inline-item"><a href="#!">City</a>
@@ -147,13 +153,13 @@
                   </li>
                   <li class="list-inline-item"><a href="#!">Video</a>
                   </li>
-               </ul>
+               </ul> -->
             </div>
             <!-- latest post -->
             <div class="widget">
                <h5 class="widget-title"><span>Latest Article</span></h5>
                <!-- post-item -->
-               <ul class="list-unstyled widget-list">
+               <!-- <ul class="list-unstyled widget-list">
                   <li class="media widget-post align-items-center">
                      <a href="post-elements.html">
                         <img loading="lazy" class="mr-3" src="images/post/post-6.jpg">
@@ -165,8 +171,8 @@
                         <small>March 15, 2020</small>
                      </div>
                   </li>
-               </ul>
-               <ul class="list-unstyled widget-list">
+               </ul> -->
+               <!-- <ul class="list-unstyled widget-list">
                   <li class="media widget-post align-items-center">
                      <a href="post-details-1.html">
                         <img loading="lazy" class="mr-3" src="images/post/post-1.jpg">
@@ -178,8 +184,8 @@
                         <small>March 14, 2020</small>
                      </div>
                   </li>
-               </ul>
-               <ul class="list-unstyled widget-list">
+               </ul> -->
+               <!-- <ul class="list-unstyled widget-list">
                   <li class="media widget-post align-items-center">
                      <a href="post-details-2.html">
                         <img loading="lazy" class="mr-3" src="images/post/post-2.jpg">
@@ -191,7 +197,7 @@
                         <small>March 14, 2020</small>
                      </div>
                   </li>
-               </ul>
+               </ul> -->
             </div>
          </aside>
       </div>
