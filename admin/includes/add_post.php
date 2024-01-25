@@ -39,45 +39,45 @@ if (isset($_POST['create_post'])) {
 
 
 
-      // $post_image          = $_FILES['image']['name'];
-     //  $post_image_tmp      = $_FILES['image']['tmp_name'];
+    // $post_image          = $_FILES['image']['name'];
+    //  $post_image_tmp      = $_FILES['image']['tmp_name'];
 
-       $post_tags           = mysqli_real_escape_string($connection, trim($_POST['post_tags']));
-       $post_content        = mysqli_real_escape_string($connection, trim($_POST['post_content']));
+    $post_tags = mysqli_real_escape_string($connection, trim($_POST['post_tags']));
+    $post_content = mysqli_real_escape_string($connection, trim($_POST['post_content']));
 
-       $post_date           = date('d-m-y');
-       $post_comment_count  = 4;
+    $post_date = date('d-m-y');
+    $post_comment_count = 4;
 
     //   move_uploaded_file($post_image_tmp, "../images/$post_image");
 
-       $query = "INSERT INTO properties(post_title, post_user, post_date, post_image, 
+    $query = "INSERT INTO properties(post_title, post_user, post_date, post_image, 
                     post_content, post_tags, post_status) VALUES( 
                     '$post_title', 
                     '$post_user', now(), '$post_image', '$post_content', '$post_tags',  
                     '$post_status')";
 
-        $result = mysqli_query($connection, $query);
+    $result = mysqli_query($connection, $query);
 
-        confirmQuery($result);
+    confirmQuery($result);
 
-        $the_get_post_id = mysqli_insert_id($connection);
+    $the_get_post_id = mysqli_insert_id($connection);
 
-        echo "<p class='text-center text-success bg-success'>Post Created. <a href='../post.php?p_id=$the_get_post_id'> View Post</a> Or <a href='properties.php'>Edit More properties</a></p>";
+    echo "<p class='text-center text-success bg-success'>Post Created. <a href='../postHome.php?p_id=$the_get_post_id&p_user=$post_user'> View Post</a></p>";
 
-    }
+}
 
 ?>
 
 <div>
 
-<!-- <form action="" method="post" enctype="multipart/form-data">
+    <!-- <form action="" method="post" enctype="multipart/form-data">
     <input type="file" name="photos[]" multiple>
     <input type="submit" value="Upload" name="photos_post" class="btn btn-primary">
   </form> -->
 </div>
 
 <form action="" method="post" enctype="multipart/form-data">
-    
+
     <div class="form-group">
         <label for="post_title">Post Title</label>
         <input type="text" name="post_title" class="form-control">
@@ -87,19 +87,19 @@ if (isset($_POST['create_post'])) {
         <label for="post_category">Post Category</label>
         <select name="post_category_id" class="form-control">
             <?php
+
+            // $query = "SELECT * FROM categories";
+            // $result = mysqli_query($connection, $query);
             
-                // $query = "SELECT * FROM categories";
-                // $result = mysqli_query($connection, $query);
-
-                // confirmQuery($result);
-
-                // while($row = mysqli_fetch_array($result))
-                // {
-                //     $cat_id = $row['cat_id'];
-                //     $cat_title = $row['cat_title'];
-                    
-                //     echo "<option value='$cat_id'>$cat_title</option>";
-                // }
+            // confirmQuery($result);
+            
+            // while($row = mysqli_fetch_array($result))
+            // {
+            //     $cat_id = $row['cat_id'];
+            //     $cat_title = $row['cat_title'];
+            
+            //     echo "<option value='$cat_id'>$cat_title</option>";
+            // }
             
             ?>
             
@@ -115,27 +115,25 @@ if (isset($_POST['create_post'])) {
         <label for="post_auhtor">User</label>
         <select name="post_user" class="form-control">
             <?php
-            
-                if(isset($_SESSION['username']))
-                {
-                 $session_username = $_SESSION['username'];
+
+            if (isset($_SESSION['username'])) {
+                $session_username = $_SESSION['username'];
 
                 $query = "SELECT * FROM users where username = '$session_username'";
                 $result = mysqli_query($connection, $query);
 
                 confirmQuery($result);
 
-                while($row = mysqli_fetch_array($result))
-                {
+                while ($row = mysqli_fetch_array($result)) {
                     $user_id = $row['user_id'];
                     $username = $row['username'];
-                    
+
                     echo "<option value='$username'>$username</option>";
                 }
-              }
-            
+            }
+
             ?>
-            
+
         </select>
     </div>
 
