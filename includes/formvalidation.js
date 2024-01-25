@@ -124,7 +124,10 @@ function validateForm() {
         setTimeout(() => {
             password.classList.remove('is-invalid');
         }, 4000);
-        return false; // Prevent form submission
+        // return false; // Prevent form submission
+    }
+    if (window.history.replaceState) {
+        window.history.replaceState(null, null, window.location.href);
     }
 
 }

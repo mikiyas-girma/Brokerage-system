@@ -30,7 +30,6 @@ if (isset($_POST['update_user'])) {
     $user_firstname = mysqli_real_escape_string($connection, trim($_POST['user_firstname']));
     $user_lastname = mysqli_real_escape_string($connection, trim($_POST['user_lastname']));
     $user_email = mysqli_real_escape_string($connection, trim($_POST['user_email']));
-    $user_role = mysqli_real_escape_string($connection, trim($_POST['user_role']));
 
     $user_image = $_FILES['user_image']['name'];
     $user_image_tmp = $_FILES['user_image']['tmp_name'];
@@ -45,10 +44,11 @@ if (isset($_POST['update_user'])) {
             $user_image = $row['user_image'];
         }
     }
+
     $password = password_hash($password, PASSWORD_BCRYPT, array('cost' => 12));
 
-    $update_user_profile_query = "UPDATE users SET password = password, user_firstname = '$user_firstname', 
-                                user_lastname = '$user_lastname', user_email = '$user_email', user_role = '$user_role', 
+    $update_user_profile_query = "UPDATE users SET password = '$password', user_firstname = '$user_firstname', 
+                                user_lastname = '$user_lastname', user_email = '$user_email',
                                 username = '$username', user_image = '$user_image' WHERE username = '$session_username'";
 
     $result = mysqli_query($connection, $update_user_profile_query);
@@ -117,7 +117,7 @@ if (isset($_POST['update_user'])) {
 
 
                         <div class="form-group">
-                            <select name="user_role" class="form-control">
+                            <!-- <select name="user_role" class="form-control">
                                 <option value="Subscriber">
                                     <?php echo $user_role ?>
                                 </option>
@@ -134,7 +134,7 @@ if (isset($_POST['update_user'])) {
 
 
 
-                            </select>
+                            </select> -->
 
                         </div>
 
