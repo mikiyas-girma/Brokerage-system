@@ -1,3 +1,10 @@
+<!-- /**
+* This file handles the registration process for new users.
+* It includes necessary files and performs validation on user input.
+* If the registration is successful, the user's information is stored in the database.
+* If the registration fails, appropriate error messages are displayed.
+*/ -->
+
 <?php include "includes/db.php"; ?>
 <?php include "admin/functions.php"; ?>
 

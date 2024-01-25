@@ -105,7 +105,6 @@ function validateEmail() {
 }
 
 
-
 function validateForm() {
     var username = document.getElementById("username");
     var password = document.getElementById("password");

@@ -1,3 +1,10 @@
+<!-- /**
+ *
+ * This file represents the  page to enter to  the Brokerage System.
+ * It includes the necessary header file and contains the login and registration forms.
+ * The user can sign in with their username and password or register a new account.
+ * If there are any error messages, they will be displayed on the page.
+ */ -->
 <?php // include("includes/db.php"); ?>
 <?php include "includes/home_header.php"; ?>
 
@@ -131,8 +138,6 @@
                                                         <div class="form-group">
                                                             <input type="submit" name="submit" id="btn-register"
                                                                 class="btn float-right login_btn m-4" value="Register">
-                                                            <!-- after registering reload the page without submitting the form again -->
-
                                                         </div>
                                                     </form>
                                                     <div class="d-flex justify-content-center links">
