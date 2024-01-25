@@ -108,23 +108,25 @@ function validateEmail() {
 function validateForm() {
     var username = document.getElementById("username");
     var password = document.getElementById("password");
+    const usernameRE = /^[a-zA-Z0-9]{4,10}$/;
+    if (!usernameRE.test(username.value)) {
+        console.log("Username or password field is empty", username.value, password.value)
+        username.classList.add('is-invalid');
+        setTimeout(() => {
+            username.classList.remove('is-invalid');
+        }, 3000);
 
-    if (username.value.trim() === "" || password.value.trim() === "") {
-        // console.log("Username or password field is empty")
-        if (username.value.trim() === "") {
-            username.classList.add('is-invalid');
-            setTimeout(() => {
-                username.classList.remove('is-invalid');
-            }, 3000);
-        }
-        if (password.value.trim() === "") {
-            password.classList.add('is-invalid');
-            setTimeout(() => {
-                password.classList.remove('is-invalid');
-            }, 3000);
-        }
         return false; // Prevent form submission
     }
+    const passwordRE = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{5,9}$/;
+    if (!passwordRE.test(password.value)) {
+        password.classList.add('is-invalid');
+        setTimeout(() => {
+            password.classList.remove('is-invalid');
+        }, 4000);
+        return false; // Prevent form submission
+    }
+
 }
 
 function validateRegistrationForm() {

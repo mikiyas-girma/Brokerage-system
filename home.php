@@ -60,14 +60,15 @@
                                                             <input id="username" type="text" name="username"
                                                                 class="form-control" placeholder="Username">
                                                             <div class="invalid-feedback">
-                                                                enter your username
+                                                                enter your username must be> 4 characters
                                                             </div>
                                                         </div>
                                                         <div class="input-group form-group">
                                                             <input id="password" type="password" name="password"
                                                                 class="form-control" placeholder="Password">
                                                             <div class="invalid-feedback">
-                                                                enter your password
+                                                                password must contain at least 5 characters that
+                                                                includes at least one number and one letter
                                                             </div>
                                                         </div>
                                                         <div id="submit" class="form-group">
