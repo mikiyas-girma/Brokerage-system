@@ -45,7 +45,7 @@ function validateLastName() {
 }
 function validateUserName() {
     const username = document.getElementById('username');
-    const re = /^[a-zA-Z0-9]{5,10}$/;
+    const re = /^[a-zA-Z0-9]{4,10}$/;
     if (!re.test(username.value)) {
 
         username.classList.add('is-invalid');

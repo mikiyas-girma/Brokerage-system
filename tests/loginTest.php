@@ -4,5 +4,5 @@ $_POST['username'] = 'kuma';
 $_POST['password'] = '123';
 
 // Include the login.php file
-include 'login.php';
+include '../includes/login.php';
 ?>
