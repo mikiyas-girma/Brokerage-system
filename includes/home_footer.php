@@ -59,7 +59,7 @@
             </div>
         </div>
         <div class="row copyright justify-content-center">
-            <div> <span class="text-white">© 2023 Jimma Ethiopia, All rights reserved</span> </div>
+            © 2023 Jimma Ethiopia, All rights reserved
         </div>
     </div>
 
