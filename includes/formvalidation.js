@@ -25,6 +25,7 @@ function validateFirstName() {
         firstname.classList.remove('is-invalid');
     }
 }
+
 function validateLastName() {
 
     const lastname = document.getElementById('lastname');
@@ -44,7 +45,7 @@ function validateLastName() {
 }
 function validateUserName() {
     const username = document.getElementById('username');
-    const re = /^[a-zA-Z]{5,10}$/;
+    const re = /^[a-zA-Z0-9]{5,10}$/;
     if (!re.test(username.value)) {
 
         username.classList.add('is-invalid');
@@ -134,7 +135,7 @@ function validateRegistrationForm() {
     var password = document.getElementById("password");
     var email = document.getElementById("email");
 
-    if (firstname.value.trim() === "" || lastname.value.trim() === "" || username.value.trim() === "" || password.value.trim() === "" || email.value.trim() === "" || validatePassword() === false || validateUserName() === false) {
+    if (firstname.value.trim() === "" || lastname.value.trim() === "" || email.value.trim() === "") {
         // console.log("Username or password field is empty")
         if (firstname.value.trim() === "") {
             firstname.classList.add('is-invalid');
@@ -156,6 +157,17 @@ function validateRegistrationForm() {
         if (email.value.trim() === "") {
             email.classList.add('is-invalid');
             email.nextElementSibling.style.display = "none";
+        }
+        if (usernameInput.value.trim() === "") {
+            usernameInput.classList.add('is-invalid');
+            usernameInput.nextElementSibling.style.display = "none";
+        }
+
+        // add is-invalid class to password input also if it does not match the regex during registration
+        const re = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{5,9}$/;
+        if (!re.test(passwordInput.value)) {
+            passwordInput.classList.add('is-invalid');
+            passwordInput.nextElementSibling.style.display = "none";
         }
         return false; // Prevent form submission
     }
