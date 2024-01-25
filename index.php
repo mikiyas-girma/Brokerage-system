@@ -191,7 +191,7 @@
 
    </div>
    <div class="text-center">
-      <p class="content">&copy; 2023 <a href="#" target="_blank">JImma, Ethiopia</a></p>
+      <p class="content"> © 2023 Jimma Ethiopia, All rights reserved<a href="#" target="_blank"></a></p>
    </div>
    </div>
 </footer>
