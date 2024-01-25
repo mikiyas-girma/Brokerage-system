@@ -88,37 +88,50 @@
                                                             <input type="text" name="firstName" id="firstname"
                                                                 class="form-control" placeholder="First Name">
                                                             <div class="invalid-feedback">
-                                                                enter your username
+                                                                enter your first name
                                                             </div>
                                                             <span id="firstNameError" class="error"></span>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="lastName" class="sr-only">Last Name:</label>
-                                                            <input type="text" name="lastName" id="lastName"
+                                                            <input type="text" name="lastName" id="lastname"
                                                                 class="form-control" placeholder="Last Name">
+                                                            <div class="invalid-feedback">
+                                                                enter your last name
+                                                            </div>
                                                             <span id="lastNameError" class="error"></span>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="email" class="sr-only">Email</label>
                                                             <input type="email" name="email" id="email"
                                                                 class="form-control" placeholder="Email Address">
+                                                            <div class="invalid-feedback">
+                                                                enter valid email address
+                                                            </div>
                                                             <span id="emailError" class="error"></span>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="username" class="sr-only">Username</label>
                                                             <input type="text" name="username" id="username"
                                                                 class="form-control" placeholder="Username">
+                                                            <div class="invalid-feedback">
+                                                                enter username > 4 characters
+                                                            </div>
                                                             <span id="usernameError" class="error"></span>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="password" class="sr-only">Password</label>
                                                             <input type="password" name="password" id="password"
                                                                 class="form-control" placeholder="Password">
+                                                            <div class="invalid-feedback">
+                                                                enter your password
+                                                            </div>
                                                             <span id="passwordError" class="error"></span>
                                                         </div>
                                                         <div class="form-group">
                                                             <input type="submit" name="submit" id="btn-register"
                                                                 class="btn float-right login_btn m-4" value="Register">
+
                                                         </div>
                                                     </form>
                                                     <div class="d-flex justify-content-center links">
