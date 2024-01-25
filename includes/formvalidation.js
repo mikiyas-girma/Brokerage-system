@@ -172,7 +172,7 @@ function validateRegistrationForm() {
         return false; // Prevent form submission
     }
 }
-
+// after registering reload the page without submitting the form again
 if (window.history.replaceState) {
     window.history.replaceState(null, null, window.location.href);
 }
