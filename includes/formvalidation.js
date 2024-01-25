@@ -13,9 +13,9 @@ passwordInput.addEventListener('blur', validatePassword);
 // event listeners on registration form
 function validateFirstName() {
     const firstname = document.getElementById('firstname');
-
-    if (firstname.value === "") {
-        console.log("first Name field is empty")
+    const re = /^[a-zA-Z]{2,10}$/;
+    if (!re.test(firstname.value)) {
+        console.log("first Name field", firstname.value)
         firstname.classList.add('is-invalid');
         setTimeout(() => {
             firstname.classList.remove('is-invalid');
@@ -27,11 +27,11 @@ function validateFirstName() {
 }
 
 function validateLastName() {
-
+    const re = /^[a-zA-Z]{2,10}$/;
     const lastname = document.getElementById('lastname');
 
-    if (lastname.value === "") {
-        console.log("last name field is empty")
+    if (!re.test(lastname.value)) {
+        console.log("last name field", lastname.value)
         lastname.classList.add('is-invalid');
         setTimeout(() => {
             lastname.classList.remove('is-invalid');
@@ -45,9 +45,8 @@ function validateLastName() {
 }
 function validateUserName() {
     const username = document.getElementById('username');
-    const re = /^[a-zA-Z0-9]{4,10}$/;
+    const re = /^(([A-Za-z]{2,})+)([A-Za-z0-9]{2,5})$/;
     if (!re.test(username.value)) {
-
         username.classList.add('is-invalid');
         setTimeout(() => {
             username.classList.remove('is-invalid');
@@ -57,7 +56,6 @@ function validateUserName() {
     }
 
     if (!re.test(usernameInput.value)) {
-
         usernameInput.classList.add('is-invalid');
         setTimeout(() => {
             usernameInput.classList.remove('is-invalid');
@@ -69,15 +67,14 @@ function validateUserName() {
 
 function validatePassword() {
     const password = document.getElementById('password');
-    const re = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{5,9}$/;
-    if (password.value === "") {
+    const pwRE = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{5,9}$/;
+    if (!pwRE.test(password.value)) {
         password.classList.add('is-invalid');
         setTimeout(() => {
             password.classList.remove('is-invalid');
         }, 2000); // Remove 'is-invalid' class after 2 seconds
     } else {
         password.classList.remove('is-invalid');
-        return true;
     }
 
     if (!re.test(passwordInput.value)) {
@@ -108,7 +105,7 @@ function validateEmail() {
 function validateForm() {
     var username = document.getElementById("username");
     var password = document.getElementById("password");
-    const usernameRE = /^[a-zA-Z0-9]{4,10}$/;
+    const usernameRE = /^(([A-Za-z]{2,})+)([A-Za-z0-9]{2,5})$/;
     if (!usernameRE.test(username.value)) {
         console.log("Username or password field is empty", username.value, password.value)
         username.classList.add('is-invalid');
@@ -124,7 +121,7 @@ function validateForm() {
         setTimeout(() => {
             password.classList.remove('is-invalid');
         }, 4000);
-        // return false; // Prevent form submission
+        return false; // Prevent form submission
     }
     if (window.history.replaceState) {
         window.history.replaceState(null, null, window.location.href);
@@ -139,7 +136,10 @@ function validateRegistrationForm() {
     var password = document.getElementById("password");
     var email = document.getElementById("email");
 
-    if (firstname.value.trim() === "" || lastname.value.trim() === "" || email.value.trim() === "") {
+    const nameRE = /^[a-zA-Z]{2,10}$/;
+    const emailRE = /^[A-Za-z]([A-Za-z0-9_\-\.]+)@([A-Za-z0-9_\-\.]+)\.([A-Za-z]{2,5})$/;
+
+    if (!nameRE.test(firstname.value) || !nameRE.test(lastname.value) || emailRE.test(email.value)) {
         // console.log("Username or password field is empty")
         if (firstname.value.trim() === "") {
             firstname.classList.add('is-invalid');

@@ -60,15 +60,14 @@
                                                             <input id="username" type="text" name="username"
                                                                 class="form-control" placeholder="Username">
                                                             <div class="invalid-feedback">
-                                                                enter your username must be> 4 characters
+                                                                > 3 characters start with at least 2 letters
                                                             </div>
                                                         </div>
                                                         <div class="input-group form-group">
                                                             <input id="password" type="password" name="password"
                                                                 class="form-control" placeholder="Password">
                                                             <div class="invalid-feedback">
-                                                                password must contain at least 5 characters that
-                                                                includes at least one number and one letter
+                                                                > 4 characters with at least 1 number & 1 letter
                                                             </div>
                                                         </div>
                                                         <div id="submit" class="form-group">
@@ -96,7 +95,7 @@
                                                             <input type="text" name="firstName" id="firstname"
                                                                 class="form-control " placeholder="First Name">
                                                             <div class="invalid-feedback">
-                                                                enter your first name
+                                                                only letters allowed
                                                             </div>
                                                             <span id="firstNameError" class="error"></span>
                                                         </div>
@@ -105,7 +104,7 @@
                                                             <input type="text" name="lastName" id="lastname"
                                                                 class="form-control" placeholder="Last Name">
                                                             <div class="invalid-feedback">
-                                                                enter your last name
+                                                                only letters allowed
                                                             </div>
                                                             <span id="lastNameError" class="error"></span>
                                                         </div>
@@ -123,7 +122,7 @@
                                                             <input type="text" name="username" id="username"
                                                                 class="form-control" placeholder="Username">
                                                             <div class="invalid-feedback">
-                                                                enter username > 4 characters
+                                                                > 3 characters start with at least 2 letters
                                                             </div>
                                                             <span id="usernameError" class="error"></span>
                                                         </div>
@@ -132,7 +131,7 @@
                                                             <input type="password" name="password" id="password"
                                                                 class="form-control" placeholder="Password">
                                                             <div class="invalid-feedback">
-                                                                enter your password
+                                                                > 4 characters with at least 1 number & 1 letter
                                                             </div>
                                                             <span id="passwordError" class="error"></span>
                                                         </div>
