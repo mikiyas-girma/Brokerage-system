@@ -8,7 +8,7 @@
          <div class="col-lg-8  mb-5 mb-lg-0">
 
             <?php
-            $query = "SELECT * FROM properties order by post_id desc ";
+            $query = "SELECT * FROM properties where post_status = 'published' order by post_id desc ";
             $result = mysqli_query($connection, $query);
 
             while ($row = mysqli_fetch_array($result)) {
@@ -127,7 +127,7 @@
 
 
                <?php
-               $query = "SELECT * FROM properties order by post_id desc ";
+               $query = "SELECT * FROM properties where post_status = 'published' order by post_id desc ";
                $result = mysqli_query($connection, $query);
 
                while ($row = mysqli_fetch_array($result)) {

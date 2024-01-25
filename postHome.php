@@ -12,7 +12,7 @@
                 if (isset($_GET['p_id'])) {
                     $the_get_post_id = $_GET['p_id'];
 
-                    $query = "SELECT * FROM properties WHERE post_id = $the_get_post_id AND post_status = 'published'";
+                    $query = "SELECT * FROM properties WHERE post_id = $the_get_post_id ";
                     $result = mysqli_query($connection, $query);
 
                     while ($row = mysqli_fetch_array($result)) {

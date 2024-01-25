@@ -11,7 +11,7 @@
             if (isset($_POST['submit'])) {
                $search = $_POST['search'];
 
-               $query = "SELECT * FROM properties WHERE post_title  LIKE '%$search%' AND post_tags  LIKE '%$search%' order by post_id desc";
+               $query = "SELECT * FROM properties WHERE post_status = 'published' AND  post_title  LIKE '%$search%' AND post_tags  LIKE '%$search%' order by post_id desc";
                $result = mysqli_query($connection, $query);
 
                if (!$result) {
@@ -21,7 +21,7 @@
                $count = mysqli_num_rows($result);
 
                if ($count == 0) {
-                  echo "<h1 class='text-warning'>No result found.</h1>";
+                  echo "<h1 class='text-warning'>No property found.</h1>";
                } else {
 
                   while ($row = mysqli_fetch_array($result)) {
