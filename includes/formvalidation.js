@@ -141,8 +141,8 @@ function validateRegistrationForm() {
     const nameRE = /^[a-zA-Z]{2,10}$/;
     const emailRE = /^[A-Za-z]([A-Za-z0-9_\-\.]+)@([A-Za-z0-9_\-\.]+)\.([A-Za-z]{2,5})$/;
 
-    if (!nameRE.test(firstname.value) || !nameRE.test(lastname.value) || emailRE.test(email.value)) {
-        // console.log("Username or password field is empty")
+    if (!nameRE.test(firstname.value) || !nameRE.test(lastname.value) || !emailRE.test(email.value)) {
+        console.log("some input wrong", firstname.value, lastname.value, email.value, usernameInput.value, passwordInput.value)
         if (firstname.value.trim() === "") {
             firstname.classList.add('is-invalid');
             // making the next element display to none
