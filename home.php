@@ -1,10 +1,10 @@
 <!-- /**
- *
- * This file represents the  page to enter to  the Brokerage System.
- * It includes the necessary header file and contains the login and registration forms.
- * The user can sign in with their username and password or register a new account.
- * If there are any error messages, they will be displayed on the page.
- */ -->
+*
+* This file represents the  page to enter to  the Brokerage System.
+* It includes the necessary header file and contains the login and registration forms.
+* The user can sign in with their username and password or register a new account.
+* If there are any error messages, they will be displayed on the page.
+*/ -->
 <?php // include("includes/db.php"); ?>
 <?php include "includes/home_header.php"; ?>
 

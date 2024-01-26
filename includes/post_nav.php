@@ -21,9 +21,16 @@
                </li> -->
                <!-- another list item that navigates to user_profile.php -->
                <li class="nav-item dropdown">
-                  <a class="btn btn-primary" href="user/user_profile.php">
+                  <?php
+                  if ($_SESSION['user_role'] == 'Admin') {
+                     echo "<a class='btn btn-primary' href='./admin/properties.php?source=add_post'><i class='ti-plus'></i>ADD POST</a>";
+                  } else {
+                     echo "<a class='btn btn-primary' href='user/user_profile.php'><i class='ti-plus'></i> ADD POST</a>";
+                  }
+                  ?>
+                  <!-- <a class="btn btn-primary" href="user/user_profile.php">
                      <i class="ti-plus"></i>ADD POST
-                  </a>
+                  </a> -->
                </li>
 
                <?php

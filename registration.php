@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
     $password = mysqli_real_escape_string($connection, trim($_POST['password']));
 
     if (username_exists($username)) {
-        echo "<h5 id='myalert' class='text-center text-danger'>User with this username already exists, try different username instead </h5>";
+        echo "<h5 id='myalert' class='text-center text-danger'>User with this username already exists, signup with different username  </h5>";
     } else {
         if (!empty($username) && !empty($email) && !empty($password)) {
 
