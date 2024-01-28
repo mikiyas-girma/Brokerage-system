@@ -1,71 +1,71 @@
-<?php include("includes/header.php"); ?>
-
 <?php
+session_start();
 
-if(!is_admin($_SESSION['username']))
-{
-    header("Location: index.php");
+if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'Admin') {
+    header("Location: ../home.php");
+    exit;
 }
-
 ?>
 
-    <div id="wrapper">
+<?php include("includes/header.php"); ?>
 
-        <!-- Navigation -->
-        <?php include("includes/navigation.php"); ?>
 
-        <div id="page-wrapper">
+<div id="wrapper">
 
-            <div class="container-fluid">
+    <!-- Navigation -->
+    <?php include("includes/navigation.php"); ?>
 
-                <!-- Page Heading -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">
-                            Welcome To Admin
-                            <small><?php echo $_SESSION['username']; ?></small>
-                        </h1>
-                        <?php
-                            // Displaying pages based on condition
-                            if (isset($_GET['source'])) 
-                            {
-                                $source = $_GET['source'];
-                            }
-                            else
-                            {
-                                $source = "";
-                            }
+    <div id="page-wrapper">
 
-                            switch ($source) {
-                                case 'add_user':
-                                    include("includes/add_user.php");
-                                    break;
+        <div class="container-fluid">
 
-                                case 'view_detail':
-                                        include("includes/detail_of_users.php");
-                                        break;
+            <!-- Page Heading -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        Welcome To Admin
+                        <small>
+                            <?php echo $_SESSION['username']; ?>
+                        </small>
+                    </h1>
+                    <?php
+                    // Displaying pages based on condition
+                    if (isset($_GET['source'])) {
+                        $source = $_GET['source'];
+                    } else {
+                        $source = "";
+                    }
 
-                                case 'edit_user':
-                                    include("includes/edit_user.php");
-                                    break;
-                                
-                                default:
-                                    include("includes/view_all_users.php");
-                                    break;
-                            }
+                    switch ($source) {
+                        case 'add_user':
+                            include("includes/add_user.php");
+                            break;
 
-                        ?>
-                    </div>
+                        case 'view_detail':
+                            include("includes/detail_of_users.php");
+                            break;
+
+                        case 'edit_user':
+                            include("includes/edit_user.php");
+                            break;
+
+                        default:
+                            include("includes/view_all_users.php");
+                            break;
+                    }
+
+                    ?>
                 </div>
-                <!-- /.row -->
-
             </div>
-            <!-- /.container-fluid -->
+            <!-- /.row -->
 
         </div>
-        <!-- /#page-wrapper -->
+        <!-- /.container-fluid -->
 
     </div>
-    <!-- /#wrapper -->
+    <!-- /#page-wrapper -->
+
+</div>
+<!-- /#wrapper -->
 
 <?php include("includes/footer.php"); ?>

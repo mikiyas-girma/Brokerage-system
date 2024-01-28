@@ -70,12 +70,12 @@ if (isset($_POST['checkBoxArray'])) {
         <table class="table table-responsive table-hover">
 
             <div id="" class="col-xs-8 col-lg-3">
-                <select name="bulk_options" id="" class="form-control">
-                    <option value="">Select Options</option>
+                <label for="bulk_options" style="margin-bottom: 10px;">Select Options:</label>
+                <select name="bulk_options" id="bulk_options" class="form-control"
+                    style="margin-bottom: 10px; padding: 5px;">
                     <option value="published">Publish</option>
                     <option value="draft">Draft</option>
                     <option value="delete">Delete</option>
-                    <!-- <option value="clone">Clone</option> -->
                 </select>
             </div>
 

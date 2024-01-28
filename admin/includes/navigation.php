@@ -11,7 +11,7 @@
     </div>
     <!-- Top Menu Items -->
     <ul class="nav navbar-right top-nav">
-        <li><a href="../index.php">Home Page</a></li>
+        <li><a href="index.php">Home Page</a></li>
 
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>
@@ -67,6 +67,9 @@
                         <a href="./users.php?source=add_user">Add User</a>
                     </li>
                 </ul>
+            </li>
+            <li>
+                <a href="../index.php"><i class="fa fa-fw fa-user"></i> User Page</a>
             </li>
             <li>
                 <a href="./profile.php"><i class="fa fa-fw fa-file"></i> Profile</a>
