@@ -66,7 +66,7 @@ if (isset($_POST['create_post'])) {
         <label for="post_title">Post Title</label>
         <input type="text" name="post_title" class="form-control">
         <div class="invalid-feedback">
-            please enter a post title
+            please enter a post title at least 3 characters
         </div>
     </div>
 
@@ -119,11 +119,17 @@ if (isset($_POST['create_post'])) {
     <div class="form-group">
         <label for="post_tags">Post Tags</label>
         <input type="text" name="post_tags" class="form-control">
+        <div class="invalid-feedback">
+            Please enter at least one tag. at least 3 characters
+        </div>
     </div>
 
     <div class="form-group">
         <label for="post_content">Post Content</label>
         <textarea name="post_content" class="form-control" cols="30" rows="10"></textarea>
+        <div class="invalid-feedback">
+            Please enter some content. at least 5 words
+        </div>
     </div>
 
     <div class="form-group">
