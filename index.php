@@ -1,6 +1,17 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user_role'])) {
+   header("Location: home.php");
+   exit;
+}
+?>
 <?php include("includes/db.php"); ?>
 <?php include "includes/post_header.php"; ?>
 <?php include "includes/post_nav.php"; ?>
+
+
+
 
 <section class="section">
    <div class="container">

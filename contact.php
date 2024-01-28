@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user_role'])) {
+    header("Location: home.php");
+    exit;
+}
+?>
+
 <?php include "includes/db.php"; ?>
 <?php include "includes/header.php"; ?>
 

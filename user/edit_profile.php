@@ -1,5 +1,13 @@
 <?php
 
+if (!isset($_SESSION['user_role'])) {
+    header("Location: ../home.php");
+    exit;
+}
+?>
+
+<?php
+
 if (isset($_SESSION['username'])) {
     $session_username = $_SESSION['username'];
 

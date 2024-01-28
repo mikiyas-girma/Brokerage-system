@@ -1,6 +1,13 @@
 <?php ob_start(); ?>
+<?php
+session_start();
 
-<?php session_start(); ?>
+if (!isset($_SESSION['user_role'])) {
+    header("Location: ../home.php");
+    exit;
+}
+?>
+
 <?php include("../includes/db.php"); ?>
 <?php include("../admin/functions.php"); ?>
 

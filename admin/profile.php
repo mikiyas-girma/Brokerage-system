@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'Admin') {
+    header("Location: ../home.php");
+    exit;
+}
+?>
+
 <?php include("includes/header.php"); ?>
 
 <?php

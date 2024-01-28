@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user_role'])) {
+    header("Location: home.php");
+    exit;
+}
+?>
+
 <?php include("includes/db.php"); ?>
 <?php include "includes/post_header.php"; ?>
 <?php include "includes/post_nav.php"; ?>
@@ -39,7 +48,7 @@
                                     </a></h3>
                                 <ul class="list-inline post-meta mb-4">
                                     <li class="list-inline-item"><i class="ti-user mr-2"></i>
-                                        <a href="author.html">
+                                        <a href="">
                                             <?php echo $post_user; ?>
                                         </a>
                                     </li>
