@@ -65,7 +65,7 @@ if (isset($_POST['create_post'])) {
     <div class="form-group">
         <label for="post_title">Post Title</label>
         <input type="text" name="post_title" class="form-control">
-        <div class="invalid-feedback">
+        <div class="invalid-feedback" style="display: none; color: red;">
             please enter a post title at least 3 characters
         </div>
     </div>
@@ -111,7 +111,7 @@ if (isset($_POST['create_post'])) {
     <div class="form-group">
         <label for="post_image">Post Image</label>
         <input type="file" name="photos[]" class="form-control" multiple>
-        <div class="invalid-feedback">
+        <div class="invalid-feedback" style="display: none; color: red;">
             Please select at least one image.
         </div>
     </div>
@@ -119,7 +119,7 @@ if (isset($_POST['create_post'])) {
     <div class="form-group">
         <label for="post_tags">Post Tags</label>
         <input type="text" name="post_tags" class="form-control">
-        <div class="invalid-feedback">
+        <div class="invalid-feedback" style="display: none; color: red;">
             Please enter at least one tag. at least 3 characters
         </div>
     </div>
@@ -127,7 +127,7 @@ if (isset($_POST['create_post'])) {
     <div class="form-group">
         <label for="post_content">Post Content</label>
         <textarea name="post_content" class="form-control" cols="30" rows="10"></textarea>
-        <div class="invalid-feedback">
+        <div class="invalid-feedback" style="display: none; color: red;">
             Please enter some content. at least 5 words
         </div>
     </div>
