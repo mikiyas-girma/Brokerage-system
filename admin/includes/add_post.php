@@ -3,7 +3,6 @@ $uploadDir = "../images/"; // Directory to store uploaded photos
 
 if (isset($_POST['create_post'])) {
     $post_title = mysqli_real_escape_string($connection, trim($_POST['post_title']));
-    // $post_category_id = mysqli_real_escape_string($connection, trim($_POST['post_category_id']));
     $post_user = mysqli_real_escape_string($connection, trim($_POST['post_user']));
     $post_status = mysqli_real_escape_string($connection, trim($_POST['post_status']));
 
@@ -30,17 +29,6 @@ if (isset($_POST['create_post'])) {
     $photoData = implode(",", $photoData);
     $photoData = mysqli_real_escape_string($connection, $photoData);
 
-    // $sql = "INSERT INTO properties (post_title, post_user, post_status, post_image, photo_data) 
-    //         VALUES ('$post_title', '$post_user', '$post_status', '$post_image', '$photoData')";
-
-    // $result = mysqli_query($connection, $sql);
-
-    // echo "Upload successful!";
-
-
-
-    // $post_image          = $_FILES['image']['name'];
-    //  $post_image_tmp      = $_FILES['image']['tmp_name'];
 
     $post_tags = mysqli_real_escape_string($connection, trim($_POST['post_tags']));
     $post_content = mysqli_real_escape_string($connection, trim($_POST['post_content']));
@@ -70,46 +58,18 @@ if (isset($_POST['create_post'])) {
 
 <div>
 
-    <!-- <form action="" method="post" enctype="multipart/form-data">
-    <input type="file" name="photos[]" multiple>
-    <input type="submit" value="Upload" name="photos_post" class="btn btn-primary">
-  </form> -->
 </div>
 
-<form action="" method="post" enctype="multipart/form-data">
+<form action="" method="post" onsubmit="return validateForm()" enctype="multipart/form-data">
 
     <div class="form-group">
         <label for="post_title">Post Title</label>
         <input type="text" name="post_title" class="form-control">
+        <div class="invalid-feedback">
+            please enter a post title
+        </div>
     </div>
 
-    <!-- <div class="form-group">
-        <label for="post_category">Post Category</label>
-        <select name="post_category_id" class="form-control">
-            <?php
-
-            // $query = "SELECT * FROM categories";
-            // $result = mysqli_query($connection, $query);
-            
-            // confirmQuery($result);
-            
-            // while($row = mysqli_fetch_array($result))
-            // {
-            //     $cat_id = $row['cat_id'];
-            //     $cat_title = $row['cat_title'];
-            
-            //     echo "<option value='$cat_id'>$cat_title</option>";
-            // }
-            
-            ?>
-            
-        </select>
-    </div> -->
-
-    <!-- <div class="form-group">
-        <label for="post_category">Post Category Id</label>
-        <input type="text" name="post_category_id" class="form-control">
-    </div> -->
 
     <div class="form-group">
         <label for="post_auhtor">User</label>
@@ -137,10 +97,6 @@ if (isset($_POST['create_post'])) {
         </select>
     </div>
 
-    <!-- <div class="form-group">
-        <label for="post_author">Post Author</label>
-        <input type="text" name="post_author" class="form-control">
-    </div> -->
 
     <div class="form-group">
         <label for="post_status">Post Status</label>
@@ -151,15 +107,13 @@ if (isset($_POST['create_post'])) {
         </select>
     </div>
 
-    <!-- <div class="form-group">
-        <label for="post_status">Post Status</label>
-        <input type="text" name="post_status" class="form-control">
-    </div> -->
 
     <div class="form-group">
         <label for="post_image">Post Image</label>
         <input type="file" name="photos[]" class="form-control" multiple>
-        <!-- <input type="file" name="image" class="form-control"> -->
+        <div class="invalid-feedback">
+            Please select at least one image.
+        </div>
     </div>
 
     <div class="form-group">
