@@ -14,10 +14,18 @@ function validateForm() {
     var fileInput = document.querySelector('input[name="photos[]"]');
 
     // Check if at least one file is selected
-    if (validatePostTitle() || fileInput.files.length === 0) {
-        postImage.classList.add('is-invalid');
-        alert("Please select at least one image.");
+    if (!(validatePostTitle()) || fileInput.files.length < 1) {
+        if (fileInput.files.length < 1) {
+            console.log("fileInput.files.length", fileInput.files.length)
+            postImage.classList.add('is-invalid');
+            postImage.focus(); // Set focus to the element
+            return false; // Prevent form submission
 
+        }
+        else {
+            console.log("fileInput.files.length", fileInput.files.length)
+            postImage.classList.remove('is-invalid');
+        }
         return false; // Prevent form submission
     }
 
@@ -25,10 +33,11 @@ function validateForm() {
 }
 
 function validatePostTitle() {
-    const re = /^[a-zA-Z]{2,10}$/;
+    const re = /^(([A-Za-z]{2,})+)([\s\S]*)$/;
 
     if (!re.test(postTitle.value)) {
         postTitle.classList.add('is-invalid');
+        postTitle.focus(); // Set focus to the element
         return false;
 
     } else {
@@ -37,91 +46,3 @@ function validatePostTitle() {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    var form = document.querySelector('form');
-    form.addEventListener('submit', function (event) {
-        event.preventDefault();
-        var postTitle = document.querySelector('input[name="post_title"]');
-        var postUser = document.querySelector('select[name="post_user"]');
-        var postStatus = document.querySelector('select[name="post_status"]');
-        var postImage = document.querySelector('input[name="photos[]"]');
-        var postTags = document.querySelector('input[name="post_tags"]');
-        var postContent = document.querySelector('textarea[name="post_content"]');
-
-        var errorMessages = [];
-
-        if (postTitle.value.trim() === '') {
-            errorMessages.push('Please enter a post title.');
-        }
-
-        if (postUser.value.trim() === '') {
-            errorMessages.push('Please select a user.');
-        }
-
-        if (postStatus.value.trim() === '') {
-            errorMessages.push('Please select a post status.');
-        }
-
-        if (postImage.files.length === 0) {
-            errorMessages.push('Please select at least one image.');
-        }
-
-        if (postTags.value.trim() === '') {
-            errorMessages.push('Please enter post tags.');
-        }
-
-        if (postContent.value.trim() === '') {
-            errorMessages.push('Please enter post content.');
-        }
-
-        if (errorMessages.length > 0) {
-            var errorElement = document.createElement('div');
-            errorElement.classList.add('alert', 'alert-danger');
-            errorElement.innerHTML = '<ul>' + errorMessages.map(function (message) {
-                return '<li>' + message + '</li>';
-            }).join('') + '</ul>';
-
-            var formGroup = document.querySelector('.form-group');
-            formGroup.insertBefore(errorElement, form);
-
-            // return;
-        }
-
-        form.submit();
-    });
-});
