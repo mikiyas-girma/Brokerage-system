@@ -9,7 +9,7 @@ if (!isset($_SESSION['user_role'])) {
 
 <?php include("includes/db.php"); ?>
 <?php include "includes/searchHeader.php"; ?>
-<?php include "includes/searchNav.php"; ?>
+<?php include "includes/post_nav.php"; ?>
 
 <section class="section">
    <div class="container">

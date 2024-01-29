@@ -23,7 +23,7 @@
 
     <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
     <link rel="stylesheet" href="plugins/slick/slick.css">
-
+    <link href="./admin/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="css/Mainstyle.css">
 

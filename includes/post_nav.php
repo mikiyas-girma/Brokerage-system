@@ -5,7 +5,7 @@
    <div class="container">
 
       <nav class="navbar navbar-expand-lg navbar-white">
-         <a class="navbar-brand" href="index.php">
+         <a class="navbar-brand" href="index.php" style="font-size: 30px; font-weight: bold;">
             <img class="img-fluid" width="150px" src="mainimages/" alt="">Brokerage system
          </a>
          <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
@@ -23,9 +23,9 @@
                <li class="nav-item dropdown">
                   <?php
                   if ($_SESSION['user_role'] == 'Admin') {
-                     echo "<a class='btn btn-primary' href='./admin/properties.php?source=add_post'><i class='ti-plus'></i>ADD POST</a>";
+                     echo "<a class='btn btn-primary mt-2' href='./admin/properties.php?source=add_post'><i class='ti-plus'></i>ADD POST</a>";
                   } else {
-                     echo "<a class='btn btn-primary' href='user/user_profile.php#addPost'><i class='ti-plus'></i> ADD POST</a>";
+                     echo "<a class='btn btn-primary mt-2' href='user/user_profile.php#addPost'><i class='ti-plus'></i> ADD POST</a>";
                   }
                   ?>
                   <!-- <a class="btn btn-primary" href="user/user_profile.php">
@@ -48,9 +48,9 @@
                if (isset($_SESSION['user_role'])) {
                   echo " <li class='nav-item dropdown'>
             <a class='nav-link text-primary' href='#' role='button' data-toggle='dropdown' aria-haspopup='true'
-            aria-expanded='false'><i class='fa fa-user'></i>";
+            aria-expanded='false'>";
                   echo $_SESSION['username'] .
-                     " <b class='caret'></b></a>
+                     " <b class='fa fa-caret-down'></b></a>
             <div class='dropdown-menu'>"; // Close PHP tag here
                
                   if ($_SESSION['user_role'] == 'Admin') {
