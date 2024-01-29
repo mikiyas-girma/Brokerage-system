@@ -87,41 +87,57 @@ if (isset($_POST['update_user'])) {
                         </small>
                     </h1>
 
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form action="" method="post" onsubmit="return validateAddUser()" enctype="multipart/form-data">
 
                         <div class="form-group">
                             <label for="username">Username</label>
-                            <input type="text" name="username" value="<?php echo $username; ?>" class="form-control">
+                            <input id="username" type="text" name="username" value="<?php echo $username; ?>"
+                                class="form-control">
+                            <div class="invalid-feedback" style="display: none; color: red;">
+                                > 3 characters start with at least 2 letters
+                            </div>
                         </div>
 
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" name="password" placeholder="password"
+                            <input id="password" type="password" name="password" placeholder="password"
                                 value="<?php //echo $password; ?>" class="form-control">
+                            <div class="invalid-feedback" style="display: none; color: red;">
+                                > 4 characters with at least 1 number & 1 letter
+                            </div>
                         </div>
 
                         <div class="form-group">
                             <label for="user_firstname">Firstname</label>
-                            <input type="text" name="user_firstname" value="<?php echo $user_firstname; ?>"
-                                class="form-control">
+                            <input id="firstname" type="text" name="user_firstname"
+                                value="<?php echo $user_firstname; ?>" class="form-control">
+                            <div class="invalid-feedback" style="display: none; color: red;">
+                                at least 2 letters & only letters allowed
+                            </div>
                         </div>
 
                         <div class="form-group">
                             <label for="user_lastname">Lastname</label>
-                            <input type="text" name="user_lastname" value="<?php echo $user_lastname; ?>"
+                            <input id="lastname" type="text" name="user_lastname" value="<?php echo $user_lastname; ?>"
                                 class="form-control">
+                            <div class="invalid-feedback" style="display: none; color: red;">
+                                at least 2 letters & only letters allowed
+                            </div>
                         </div>
 
                         <div class="form-group">
                             <label for="user_email">Email</label>
-                            <input type="email" name="user_email" value="<?php echo $user_email; ?>"
+                            <input id="email" type="email" name="user_email" value="<?php echo $user_email; ?>"
                                 class="form-control">
+                            <div class="invalid-feedback" style="display: none; color: red;">
+                                enter valid email address
+                            </div>
                         </div>
 
                         <div class="form-group">
                             <label for="user_image">Image</label>
                             <img class="img-responsive" width="200" src="../images/<?php echo $user_image; ?>" alt="">
-                            <input type="file" name="user_image" class="form-control">
+                            <input id="pp" type="file" name="user_image" class="form-control">
                         </div>
 
 
@@ -150,76 +166,12 @@ if (isset($_POST['update_user'])) {
                         <div class="form-group">
                             <input type="submit" value="Update Profile" name="update_user" class="btn btn-primary">
                         </div>
-
+                        <div class="form-group">
+                            <input type="submit" value="Cancel" name="cancelOperation"
+                                class="btn btn-danger btn-primary" onclick="window.location.href = 'index.php';">
+                        </div>
+                        <!-- $2y$12$sSxbVGIkn33t9qMTlWRLeeYyk9CeC7Ck.VZI2I8ajFEeDq/fsxW02 -->
                     </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
                 </div>
