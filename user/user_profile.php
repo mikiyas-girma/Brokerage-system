@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_role'])) {
 
 <?php include("../includes/db.php"); ?>
 <?php include("../admin/functions.php"); ?>
-
+<?php include("../includes/home_header.php"); ?>
 
 
 
@@ -168,12 +168,8 @@ if (isset($_SESSION['username'])) {
 
     <script src="../js/jquery1102.js"></script>
     <script src="../js/bootstrap337.min.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script type="text/javascript"> -->
-
-    </script>
     <script src="../js/custom.js"> </script>
+    <script src="../admin/js/validateAddUser.js"></script>
 
 </body>
 

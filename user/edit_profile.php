@@ -67,41 +67,56 @@ if (isset($_POST['update_user'])) {
 
 ?>
 
-<form action="" method="post" enctype="multipart/form-data">
+<form action="" method="post" onsubmit="return validateAddUser()" enctype="multipart/form-data">
 
     <div class="form-group">
         <label for="username">Username (Required)</label>
-        <input type="text" name="username" value="<?php echo $username; ?>" class="form-control" required>
+        <input id="username" type="text" name="username" value="<?php echo $username; ?>" class="form-control" required>
+        <div class="invalid-feedback">
+            > 3 characters start with at least 2 letters
+        </div>
     </div>
 
     <div class="form-group">
         <label for="password" type="required">Password (Required)</label>
-        <input type="password" name="password" placeholder="Password" value="<?php // echo $password; ?>"
-            class="form-control" required>
+        <input id="password" type="password" name="password" placeholder="Password" value="<?php // echo $password; ?>"
+            class="form-control">
+        <div class="invalid-feedback">
+            > 4 characters with at least 1 number & 1 letter
+        </div>
     </div>
 
     <div class="form-group">
         <label for="user_firstname">Firstname</label>
-        <input type="text" name="user_firstname" value="<?php echo $user_firstname; ?>" class="form-control">
+        <input id="firstname" type="text" name="user_firstname" value="<?php echo $user_firstname; ?>"
+            class="form-control">
+        <div class="invalid-feedback">
+            at least 2 letters & only letters allowed
+        </div>
     </div>
 
     <div class="form-group">
         <label for="user_lastname">Lastname</label>
-        <input type="text" name="user_lastname" value="<?php echo $user_lastname; ?>" class="form-control">
+        <input id="lastname" type="text" name="user_lastname" value="<?php echo $user_lastname; ?>"
+            class="form-control">
+        <div class="invalid-feedback">
+            at least 2 letters & only letters allowed
+        </div>
     </div>
 
     <div class="form-group">
         <label for="user_email">Email</label>
-        <input type="email" name="user_email" value="<?php echo $user_email; ?>" class="form-control">
+        <input id="email" type="email" name="user_email" value="<?php echo $user_email; ?>" class="form-control">
+        <div class="invalid-feedback">
+            enter valid email address
+        </div>
     </div>
 
 
     <div class="form-group">
         <input type='submit' value='Update Profile' name='update_user' class='btn btn-primary'>
     </div>
-    <a class="active" href="#profile" aria-controls="profile" role="tab">
-        <div><button type="reset" class="btn btn btn-danger">Cancel</button></div>
-    </a>
+
 
 </form>
 <?php echo "<script>setTabCookie('#updateProfile'); </script>"; ?>
