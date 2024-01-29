@@ -170,6 +170,7 @@ if (isset($_SESSION['username'])) {
     <script src="../js/bootstrap337.min.js"></script>
     <script src="../js/custom.js"> </script>
     <script src="../admin/js/validateAddUser.js"></script>
+    <script src="../admin/js/validateProperties.js"></script>
 
 </body>
 
