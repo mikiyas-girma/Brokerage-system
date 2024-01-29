@@ -30,8 +30,8 @@ if (!isset($_SESSION['user_role'])) {
                if ($row['post_title'] != null) {
 
                   // $words = explode(" ", $row['post_title']);
-                  $title = explode(" ", $row['post_title']);
-                  $tags = explode(" ", $row['post_tags']);
+                  $title = explode(" ", strtolower($row['post_title']));  // Normalize case
+                  $tags = explode(" ", strtolower($row['post_tags']));      // Normalize case
                   $words = array_merge($title, $tags);
 
 
@@ -49,14 +49,14 @@ if (!isset($_SESSION['user_role'])) {
 
 
             if (isset($_POST['search_query'])) {
-               $query = $_POST['search_query'];
+               $query = strtolower($_POST['search_query']);  // Normalize case
                // separating the words and appending the metaphone of each words with a space
                $search = explode(" ", $query);
                $search_string = "";
 
                foreach ($search as $word) {
                   $search_string .= metaphone($word) . " ";
-                  $sql = "select * from properties where indexing like '%$search_string%'";
+                  $sql = "select * from properties where indexing like '%$search_string%' and post_status = 'published'";
                   $res = mysqli_query($connection, $sql);
 
                   if (!$res) {
@@ -135,7 +135,10 @@ if (!isset($_SESSION['user_role'])) {
                      <?php
                   }
                }
-            } ?>
+            } else {
+               header("Location: index.php");
+            }
+            ?>
 
 
          </div>
@@ -152,6 +155,12 @@ if (!isset($_SESSION['user_role'])) {
                      } else {
                         echo 'Type &amp; Hit Enter...';
                      } ?>' class="search-input">
+
+                  <script>
+                     document.addEventListener("DOMContentLoaded", function () {
+                        document.getElementById("search-query").focus();
+                     });
+                  </script>
                   <button type="submit" name="search"><i class="ti-search"></i>
                   </button>
                </form>
