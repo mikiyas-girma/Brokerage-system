@@ -25,7 +25,7 @@
                   if ($_SESSION['user_role'] == 'Admin') {
                      echo "<a class='btn btn-primary' href='./admin/properties.php?source=add_post'><i class='ti-plus'></i>ADD POST</a>";
                   } else {
-                     echo "<a class='btn btn-primary' href='user/user_profile.php'><i class='ti-plus'></i> ADD POST</a>";
+                     echo "<a class='btn btn-primary' href='user/user_profile.php#addPost'><i class='ti-plus'></i> ADD POST</a>";
                   }
                   ?>
                   <!-- <a class="btn btn-primary" href="user/user_profile.php">

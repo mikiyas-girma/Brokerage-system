@@ -40,7 +40,7 @@ if (!isset($_SESSION['user_role'])) {
                         ?>
 
 
-                        <article class="row mb-5 ">
+                        <div class="post row mb-5 ">
 
                             <div class="col-12 mx-auto">
                                 <h3><a class="post-title " href="">
@@ -78,7 +78,7 @@ if (!isset($_SESSION['user_role'])) {
                                         // Assuming the images are stored in the "../images/" directory
                                         $imagePath = "images/" . $photo;
 
-                                        echo "<img loading='lazy' src='$imagePath' class='img-fluid ' style='width: 100%; height: 400px;' alt='post-thumb'>";
+                                        echo "<img loading='lazy' src='$imagePath' class='post-image img-fluid ' style='width: 100%; height: 400px;' alt='post-thumb'>";
                                     }
 
 
@@ -86,7 +86,7 @@ if (!isset($_SESSION['user_role'])) {
 
                                 </div>
                             </div>
-                        </article>
+                        </div>
 
                     <?php }
                 } ?>
@@ -177,6 +177,22 @@ if (!isset($_SESSION['user_role'])) {
 
 <!--  Script -->
 <script src="js/Sliderscript.js"></script>
+<script>
+    const image = document.querySelector('.post-image');
+
+    // Add event listener for mouseover event
+    image.addEventListener('mouseover', function () {
+        // zoom the image around the cursor
+        image.style.transform = 'scale(1.5)';
+
+    });
+
+    // Add event listener for mouseout event
+    image.addEventListener('mouseout', function () {
+        // Reset the image size
+        image.style.transform = 'scale(1)';
+    });
+</script>
 </body>
 
 </html>
