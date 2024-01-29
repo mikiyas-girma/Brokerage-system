@@ -98,6 +98,7 @@ if (mysqli_num_rows($result) > 0) {
                               <th>ID</th>
                               <th>Title</th>
                               <th>Status</th>
+                              <th>Edit Post</th>
                               <th>View Post</th>
                           </tr>
                       </thead>
@@ -166,8 +167,8 @@ while ($row = mysqli_fetch_array($result)) {
 
     //    echo "<td><a href='post_comments.php?id=$post_id' class='btn btn-primary'>$count_comments</a></td>";
     //     echo "<td>$post_date</td>";
+    echo "<td><a class='btn btn-warning' href='./editPost.php?p_id=$post_id'>Edit</a></td>";
     echo "<td><a class='btn btn-primary' href='../postHome.php?p_id=$post_id & p_user=$post_user'>View Post</a></td>";
-    //  echo "<td><a class='btn btn-warning' href='properties.php?source=edit_post&p_id=$post_id'>Edit</a></td>";
     // echo "<td><a onClick=\"javascript: return confirm('Are you sure you want to delete'); \" class='btn btn-danger' href='properties.php?delete=$post_id'>Delete</a></td>";
     //    echo "<td><a rel='$post_id' href='javascript:void(0)' class='delete_link btn btn-danger'>Delete</a></td>";
     //  echo "<td><a href='properties.php?reset=$post_id' class='btn btn-success'>$post_views_count</a></td>";

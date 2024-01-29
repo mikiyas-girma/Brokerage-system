@@ -12,7 +12,7 @@ if (!isset($_SESSION['user_role'])) {
 <?php include "includes/post_nav.php"; ?>
 
 <!-- <section class="section"> -->
-<div class="container">
+<div class="container mt-3">
     <div class="row">
         <div class="message col-lg-7 mr-auto mb-5 mb-lg-0">
 
@@ -137,7 +137,7 @@ if (!isset($_SESSION['user_role'])) {
             <form action="" method="post" role="form">
                 <div class="form-group">
                     <label for="comment_content">Your Message</label>
-                    <textarea name="comment_content" class="form-control" rows="6"></textarea>
+                    <textarea name="comment_content" class="form-control" rows="7" required></textarea>
                 </div>
 
                 <button name="create_comment" type="submit" class="btn btn-primary">Submit</button>

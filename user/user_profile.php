@@ -160,16 +160,34 @@ if (isset($_SESSION['username'])) {
                     </div>
 
                 </div>
+
             </div>
 
-        </div>
-    </div>
+            <script src="../js/jquery1102.js"></script>
+            <script src="../js/bootstrap337.min.js"></script>
+            <script src="../js/custom.js"> </script>
+            <script src="../admin/js/validateAddUser.js"></script>
+            <script src="../admin/js/validateProperties.js"></script>
 
-    <script src="../js/jquery1102.js"></script>
-    <script src="../js/bootstrap337.min.js"></script>
-    <script src="../js/custom.js"> </script>
-    <script src="../admin/js/validateAddUser.js"></script>
-    <script src="../admin/js/validateProperties.js"></script>
+</body>
+
+</html>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+<script src="../js/jquery1102.js"></script>
+<script src="../js/bootstrap337.min.js"></script>
+<script src="../js/custom.js"> </script>
+<script src="../admin/js/validateAddUser.js"></script>
+<script src="../admin/js/validateProperties.js"></script>
 
 </body>
 
