@@ -154,7 +154,12 @@ if (!isset($_SESSION['user_role'])) {
             <div class="widget">
                <h5 class="widget-title"><span>Search</span></h5>
                <form action="searchHome.php" method="post" class="widget-search">
-                  <input id="search-query" name="search_query" type="search" placeholder="Type &amp; Hit Enter...">
+                  <input id="search-query" name="search_query" type="search" placeholder='<?php
+                  if (isset($_POST['search_query'])) {
+                     echo $_POST['search_query'];
+                  } else {
+                     echo 'Type &amp; Hit Enter...';
+                  } ?>' class="search-input">
                   <button type="submit" name="search"><i class="ti-search"></i>
                   </button>
                </form>
