@@ -177,22 +177,7 @@ if (!isset($_SESSION['user_role'])) {
 
 <!--  Script -->
 <script src="js/Sliderscript.js"></script>
-<script>
-    const image = document.querySelector('.post-image');
 
-    // Add event listener for mouseover event
-    image.addEventListener('mouseover', function () {
-        // zoom the image around the cursor
-        image.style.transform = 'scale(1.5)';
-
-    });
-
-    // Add event listener for mouseout event
-    image.addEventListener('mouseout', function () {
-        // Reset the image size
-        image.style.transform = 'scale(1)';
-    });
-</script>
 </body>
 
 </html>

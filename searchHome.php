@@ -28,9 +28,12 @@ if (!isset($_SESSION['user_role'])) {
             while ($row = mysqli_fetch_assoc($res1)) {
                $sound = "";
                if ($row['post_title'] != null) {
+
+                  // $words = explode(" ", $row['post_title']);
                   $title = explode(" ", $row['post_title']);
                   $tags = explode(" ", $row['post_tags']);
                   $words = array_merge($title, $tags);
+
 
                   foreach ($words as $word) {
                      $sound .= metaphone($word) . " ";
@@ -89,26 +92,14 @@ if (!isset($_SESSION['user_role'])) {
                               </a></h3>
                            <ul class="list-inline post-meta mb-4">
                               <li class="list-inline-item"><i class="ti-user mr-2"></i>
-                                 <a href="author.html">
+                                 <a href="#">
                                     <?php echo $post_user; ?>
                                  </a>
                               </li>
                               <li class="list-inline-item">Date :
                                  <?php echo $post_date; ?>
                               </li>
-                              <li class="list-inline-item">Categories :
-                                 <?php
-                                 $categoryQuery = "SELECT * FROM properties";
-                                 $categoryResult = mysqli_query($connection, $categoryQuery);
-                                 if ($categoryResult) {
-                                    while ($categoryRow = mysqli_fetch_array($categoryResult)) {
-                                       $categoryName = $categoryRow['post_title'];
-                                       echo "<a href='#!' class='ml-1'>$categoryName</a>";
-                                    }
-                                 }
-                                 ?>
-                              </li>
-                              <li class="list-inline-item">Tags : <a href="#!" class="ml-1">
+                              <li class="list-inline-item">Tags : <a href="#" class="ml-1">
                                     <?php echo $post_tags; ?>
                                  </a> ,<a href="#!" class="ml-1"></a>
                               </li>
@@ -154,36 +145,78 @@ if (!isset($_SESSION['user_role'])) {
             <div class="widget">
                <h5 class="widget-title"><span>Search</span></h5>
                <form action="searchHome.php" method="post" class="widget-search">
-                  <input id="search-query" name="search_query" type="search" placeholder='<?php
-                  if (isset($_POST['search_query'])) {
-                     echo $_POST['search_query'];
-                  } else {
-                     echo 'Type &amp; Hit Enter...';
-                  } ?>' class="search-input">
+                  <input style="border: solid 1px black; padding: 3px" id="search-query" name="search_query"
+                     type="search" placeholder='<?php
+                     if (isset($_POST['search_query'])) {
+                        echo $_POST['search_query'];
+                     } else {
+                        echo 'Type &amp; Hit Enter...';
+                     } ?>' class="search-input">
                   <button type="submit" name="search"><i class="ti-search"></i>
                   </button>
                </form>
             </div>
             <!-- categories -->
             <div class="widget">
-               <h5 class="widget-title"><span>Categories</span></h5>
+               <h5 class="widget-title"><span>Other properties</span></h5>
                <ul class="list-unstyled widget-list">
                   <?php
-                  $categoryQuery = "SELECT * FROM properties";
-                  $categoryResult = mysqli_query($connection, $categoryQuery);
-                  if ($categoryResult) {
-                     while ($categoryRow = mysqli_fetch_array($categoryResult)) {
-                        $categoryName = $categoryRow['post_title'];
-                        $categoryCount = $categoryRow['post_id'];
-                        echo "<li><a href='#!' class='d-flex'>$categoryName<small class='ml-auto'>($categoryCount)</small></a></li>";
-                     }
-                  }
+                  $query = "SELECT * FROM properties";
+                  $result = mysqli_query($connection, $query);
+
+                  while ($row = mysqli_fetch_array($result)) {
+                     $post_id = $row['post_id'];
+                     // $post_category_id   = $row['post_category_id'];
+                     $post_title = $row['post_title'];
+                     $post_user = $row['post_user'];
+                     $post_date = $row['post_date'];
+                     // $post_image         = $row['post_image'];
+                     $post_content = substr($row['post_content'], 0, 120);
+                     $post_tags = $row['post_tags'];
+                     $post_comment_count = $row['post_comment_count'];
+                     $post_status = $row['post_status'];
+
+
+                     ?>
+                     <ul class="list-unstyled widget-list">
+                        <li class="media widget-post align-items-center">
+
+
+                           <?php
+
+                           $post_image = $row['post_image'];
+                           $photoArray = explode(",", $post_image);
+
+                           if (!empty($photoArray)) {
+                              $firstPhoto = $photoArray[0]; // Get the first photo from the array
+                        
+                              // Assuming the images are stored in the "../images/" directory
+                              $imagePath = "images/" . $firstPhoto;
+
+                              echo "<img loading='lazy' src='$imagePath'  class='mr-3' alt=''>";
+                           }
+
+                           ?>
+
+                           <div class="media-body">
+                              <h5 class="h6 mb-0"><a href="">
+                                    <a href='postHome.php?p_id=<?php echo $post_id ?>&p_user=<?php echo $post_user ?>'>
+                                       <?php echo $post_title ?>
+                                    </a>
+                                 </a></h5>
+
+                           </div>
+                        </li>
+
+
+                     <?php } ?>
+                  </ul>
                   ?>
                </ul>
             </div>
             <!-- tags -->
             <div class="widget">
-               <h5 class="widget-title"><span>Tags</span></h5>
+               <!-- <h5 class="widget-title"><span>Tags</span></h5> -->
                <!-- <ul class="list-inline widget-list-inline">
                   <li class="list-inline-item"><a href="#!">Booth</a>
                   </li>
@@ -203,7 +236,7 @@ if (!isset($_SESSION['user_role'])) {
             </div>
             <!-- latest post -->
             <div class="widget">
-               <h5 class="widget-title"><span>Latest Article</span></h5>
+               <!-- <h5 class="widget-title"><span>Latest Article</span></h5> -->
                <!-- post-item -->
                <!-- <ul class="list-unstyled widget-list">
                   <li class="media widget-post align-items-center">
