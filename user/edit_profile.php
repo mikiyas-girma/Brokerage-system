@@ -70,7 +70,7 @@ if (isset($_POST['update_user'])) {
 <form action="" method="post" onsubmit="return validateAddUser()" enctype="multipart/form-data">
 
     <div class="form-group">
-        <label for="username">Username (Required)</label>
+        <label for="username">Username</label>
         <input id="username" type="text" name="username" value="<?php echo $username; ?>" class="form-control" required>
         <div class="invalid-feedback">
             > 3 characters start with at least 2 letters
@@ -78,7 +78,7 @@ if (isset($_POST['update_user'])) {
     </div>
 
     <div class="form-group">
-        <label for="password" type="required">Password (Required)</label>
+        <label for="password" type="required">Password</label>
         <input id="password" type="password" name="password" placeholder="Password" value="<?php // echo $password; ?>"
             class="form-control">
         <div class="invalid-feedback">

@@ -109,12 +109,11 @@ if (isset($_SESSION['username'])) {
                 <div class="portlet light bordered">
                     <div class="portlet-title tabbable-line">
                         <div class="caption caption-md">
-                            <div class="">
-                                <a class="" href="../index.php"><i class="fa fa-arrow-left"
-                                        aria-hidden="true"></i>Home</a>
+                            <div class="btn-group">
+                                <a class="btn btn-default" href="../index.php"><i class="fa fa-arrow-left"
+                                        aria-hidden="true"></i> Back to Homepage</a>
                             </div>
                             <i class="icon-globe theme-font hide"></i>
-                            <span class="caption-subject font-blue-madison bold uppercase">Your info</span>
                         </div>
                     </div>
                     <div class="portlet-body">
@@ -123,12 +122,12 @@ if (isset($_SESSION['username'])) {
                             <ul class="nav nav-tabs" role="tablist">
 
                                 <!-- <li role="presentation" class="active"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile Info</a></li> -->
-                                <li role="presentation" class="active"><a href="#updateProfile" aria-controls="" role=""
+                                <li role="presentation"><a href="#updateProfile" aria-controls="" role=""
                                         data-toggle="tab">Update Profile</a></li>
                                 <li role="presentation"><a href="#messages" aria-controls="messages" role="tab"
                                         data-toggle="tab">Messages</a></li>
-                                <li role="presentation"><a href="#addPost" aria-controls="addPost" role="tab"
-                                        data-toggle="tab"> add post</a></li>
+                                <li role="presentation" class="active"><a href="#addPost" aria-controls="addPost"
+                                        role="tab" data-toggle="tab"> add post</a></li>
                                 <li role="presentation"><a href="#myPosts" aria-controls="myPosts" role="tab"
                                         data-toggle="tab">my posts</a></li>
 
@@ -140,7 +139,7 @@ if (isset($_SESSION['username'])) {
 
 
 
-                                <div role="tabpanel" class="tab-pane active " id="updateProfile">
+                                <div role="tabpanel" class="tab-pane " id="updateProfile">
                                     <?php include("edit_profile.php"); ?>
                                 </div>
 
@@ -148,7 +147,7 @@ if (isset($_SESSION['username'])) {
                                     <?php include("view_messages.php"); ?>
                                 </div>
 
-                                <div role="tabpanel" class="tab-pane" id="addPost">
+                                <div role="tabpanel" class="tab-pane active" id="addPost">
                                     <?php include("user_add_post.php"); ?>
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="myPosts">

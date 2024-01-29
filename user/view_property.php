@@ -78,14 +78,15 @@ if (mysqli_num_rows($result) > 0) {
               <div class='table-responsive'>
                   <table id='myproperties' class='table table-responsive table-hover'>
               
-                  <div id='bulkOptionsContainer' class='col-xs-4'>
-                      <select name='bulk_options' id='' class='form-control'>
-                          <option value=''>Select Options</option>
-                          <option value='published'>Publish</option>
-                          <option value='draft'>Draft</option>
-                          <option value='delete'>Delete</option>
-                      </select>
-                  </div>
+                  <div  class='col-xs-8 col-lg-3'>
+                  <label for='bulk_options' style='margin: 5px;'>Select Options:</label>
+                  <select name='bulk_options' id='bulk_options' class='form-control'
+                      style='margin-bottom: 5px; padding: 5px;'>
+                      <option value='published'>Publish</option>
+                      <option value='draft'>Draft</option>
+                      <option value='delete'>Delete</option>
+                  </select>
+              </div>
               
                   <div class='col-xs-4 col-lg-12'>
                       <input type='submit' value='Apply' name='submit' class='btn btn-success'>
