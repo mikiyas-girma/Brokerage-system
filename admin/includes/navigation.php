@@ -11,11 +11,11 @@
     </div>
     <!-- Top Menu Items -->
     <ul class="nav navbar-right top-nav">
-        <li><a href="index.php">Home Page</a></li>
 
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>
+            <a href="#" class="dropdown-toggle p-3" data-toggle="dropdown"><i class="fa fa-user"></i>
                 <?php echo $_SESSION['username']; ?>
+                <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
                 <li>
