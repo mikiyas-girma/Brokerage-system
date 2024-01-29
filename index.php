@@ -109,8 +109,8 @@ if (!isset($_SESSION['user_role'])) {
             <div class="widget">
                <h5 class="widget-title"><span>Search</span></h5>
                <form action="searchHome.php" method="post" class="widget-search">
-                  <input id="search-query" name="search" type="search" placeholder="Type &amp; Hit Enter...">
-                  <button type="submit" name="submit"><i class="ti-search"></i>
+                  <input id="search-query" name="search_query" type="search" placeholder="Type &amp; Hit Enter...">
+                  <button type="submit" name="search"><i class="ti-search"></i>
                   </button>
                </form>
             </div>
