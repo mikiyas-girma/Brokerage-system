@@ -17,23 +17,55 @@ if (!isset($_SESSION['user_role'])) {
          <div class="col-lg-8  mb-5 mb-lg-0">
 
             <?php
-            if (isset($_POST['submit'])) {
-               $search = $_POST['search'];
 
-               $query = "SELECT * FROM properties WHERE post_status = 'published' AND  post_title  LIKE '%$search%' AND post_tags  LIKE '%$search%' order by post_id desc";
-               $result = mysqli_query($connection, $query);
+            $sql1 = "select * from properties ";
+            $res1 = mysqli_query($connection, $sql1);
 
-               if (!$result) {
+            if (!$res1) {
+               die("Query failed " . mysqli_error($connection));
+            }
+
+            while ($row = mysqli_fetch_assoc($res1)) {
+               $sound = "";
+               if ($row['post_title'] != null) {
+                  $title = explode(" ", $row['post_title']);
+                  $tags = explode(" ", $row['post_tags']);
+                  $words = array_merge($title, $tags);
+
+                  foreach ($words as $word) {
+                     $sound .= metaphone($word) . " ";
+                  }
+               }
+               $post_id = $row['post_id'];
+               $sql2 = " update properties set indexing = '$sound' where post_id = $post_id ";
+               $res2 = mysqli_query($connection, $sql2);
+               if (!$res2) {
                   die("Query failed " . mysqli_error($connection));
                }
+            }
 
-               $count = mysqli_num_rows($result);
 
-               if ($count == 0) {
+            if (isset($_POST['search_query'])) {
+               $query = $_POST['search_query'];
+               // separating the words and appending the metaphone of each words with a space
+               $search = explode(" ", $query);
+               $search_string = "";
+
+               foreach ($search as $word) {
+                  $search_string .= metaphone($word) . " ";
+                  $sql = "select * from properties where indexing like '%$search_string%'";
+                  $res = mysqli_query($connection, $sql);
+
+                  if (!$res) {
+                     die("Query failed " . mysqli_error($connection));
+                  }
+               }
+
+               if (mysqli_num_rows($res) == 0) {
                   echo "<h1 class='text-warning'>No property found.</h1>";
                } else {
 
-                  while ($row = mysqli_fetch_array($result)) {
+                  while ($row = mysqli_fetch_array($res)) {
                      $post_id = $row['post_id'];
                      // $post_category_id   = $row['post_category_id'];
                      $post_title = $row['post_title'];
@@ -122,8 +154,8 @@ if (!isset($_SESSION['user_role'])) {
             <div class="widget">
                <h5 class="widget-title"><span>Search</span></h5>
                <form action="searchHome.php" method="post" class="widget-search">
-                  <input id="search-query" name="search" type="search" placeholder="Type &amp; Hit Enter...">
-                  <button type="submit" name="submit"><i class="ti-search"></i>
+                  <input id="search-query" name="search_query" type="search" placeholder="Type &amp; Hit Enter...">
+                  <button type="submit" name="search"><i class="ti-search"></i>
                   </button>
                </form>
             </div>
