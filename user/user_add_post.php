@@ -76,11 +76,14 @@ if (isset($_POST['create_post'])) {
   </form> -->
 </div>
 
-<form action="" method="post" enctype="multipart/form-data">
+<form action="" method="post" onsubmit="return validateForm()" enctype="multipart/form-data">
 
     <div class="form-group">
         <label for="post_title">Post Title</label>
         <input type="text" name="post_title" class="form-control">
+        <div class="invalid-feedback" style="display: none; color: red;">
+            please enter a post title at least 3 characters
+        </div>
     </div>
 
     <!-- <div class="form-group">
@@ -137,10 +140,6 @@ if (isset($_POST['create_post'])) {
         </select>
     </div>
 
-    <!-- <div class="form-group">
-        <label for="post_author">Post Author</label>
-        <input type="text" name="post_author" class="form-control">
-    </div> -->
 
     <div class="form-group">
         <label for="post_status">Post Status</label>
@@ -159,17 +158,25 @@ if (isset($_POST['create_post'])) {
     <div class="form-group">
         <label for="post_image">Post Image</label>
         <input type="file" name="photos[]" class="form-control" multiple>
-        <!-- <input type="file" name="image" class="form-control"> -->
+        <div class="invalid-feedback" style="display: none; color: red;">
+            Please select at least one image.
+        </div>
     </div>
 
     <div class="form-group">
         <label for="post_tags">Post Tags</label>
         <input type="text" name="post_tags" class="form-control">
+        <div class="invalid-feedback" style="display: none; color: red;">
+            Please enter at least one tag. at least 3 characters
+        </div>
     </div>
 
     <div class="form-group">
         <label for="post_content">Post Content</label>
         <textarea name="post_content" class="form-control" cols="30" rows="10"></textarea>
+        <div class="invalid-feedback" style="display: none; color: red;">
+            Please enter some content. at least 5 words
+        </div>
     </div>
 
     <div class="form-group">
