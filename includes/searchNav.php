@@ -10,11 +10,6 @@
             </button>
             <div class="collapse navbar-collapse text-center" id="navigation">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="index.php">
-                            Homepage
-                        </a>
-                    </li>
                     <?php
                     if (isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'Admin') {
                         echo "<li class='nav-item'> <a class='nav-link' href='./admin/index.php'>Dashboard</a>  </li>";
