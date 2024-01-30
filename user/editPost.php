@@ -235,7 +235,7 @@ WHERE post_id = $the_get_post_id";
 
                     <div class="form-group">
                         <label for="post_image">Post Image</label>
-                        <input type="file" name="photos[]" value=' <?php echo $post_image; ?>' class="form-control"
+                        <input type="file" name="photos" value="<?php echo $post_image; ?>" class="form-control"
                             multiple>
                         <div class="invalid-feedback" style="display: none; color: red;">
                             Please select at least one image.
