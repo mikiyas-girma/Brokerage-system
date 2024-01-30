@@ -60,12 +60,14 @@ if (isset($_GET['p_id'])) {
 
 if (isset($_POST['update_post'])) {
     $post_title = mysqli_real_escape_string($connection, trim($_POST['post_title']));
-    $post_category_id = mysqli_real_escape_string($connection, trim($_POST['post_category_id']));
+    $post_tags = mysqli_real_escape_string($connection, trim($_POST['post_tags']));
+    // $post_category_id = mysqli_real_escape_string($connection, trim($_POST['post_category_id']));
     $post_user = mysqli_real_escape_string($connection, trim($_POST['post_user']));
     $post_status = mysqli_real_escape_string($connection, trim($_POST['post_status']));
 
-    $post_image = $_FILES['image']['name'];
-    $post_image_tmp = $_FILES['image']['tmp_name'];
+    // $post_image = $_FILES['image']['name'];
+    // $post_image = $post_image;
+    $post_image_tmp = $_FILES['photos']['tmp_name'];
 
     $post_tags = mysqli_real_escape_string($connection, trim($_POST['post_tags']));
     $post_content = mysqli_real_escape_string($connection, trim($_POST['post_content']));
@@ -92,7 +94,7 @@ WHERE post_id = $the_get_post_id";
 
     confirmQuery($result);
 
-    echo "<p class='text-center text-success bg-success'>Post Updated. <a href='../postHome.php?p_id=$the_get_post_id'> View
+    echo "<p class='text-center text-success bg-success'>Post Updated. <a href='../postHome.php?p_id=$the_get_post_id&p_user=$post_user'> View
         Post</a> </p>";
 
 
@@ -190,8 +192,6 @@ WHERE post_id = $the_get_post_id";
                     </div>
 
 
-
-
                     <div class="form-group">
                         <label for="post_auhtor">User</label>
                         <select name="post_user" class="form-control">
@@ -260,7 +260,7 @@ WHERE post_id = $the_get_post_id";
                     </div>
 
                     <div class="form-group">
-                        <input type="submit" value="update_post" name="create_post" class="btn btn-primary mr-3">
+                        <input type="submit" value="update_post" name="update_post" class="btn btn-primary mr-3">
                         <a href="user_profile.php" class="btn btn-danger">Cancel</a>
                     </div>
 
